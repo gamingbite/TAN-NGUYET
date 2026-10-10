@@ -1,6 +1,6 @@
 # TÀN NGUYỆT — AI TASK QUEUE & RESUME
 
-**Phiên bản:** 1.8 — 10/10/2026
+**Phiên bản:** 1.9 — 10/10/2026
 **Dành cho:** Codex / AI Game Director / AI QA / AI Art Reviewer  
 **File theo dõi đang dùng:** `D:\RPG GAMES\docs\AI_NEXT_TASKS.md`  
 **Nguồn:** Kiểm tra bản `RPG GAMES.zip` ngày 09/10/2026, `AGENTS.md`, `README.md`, `docs/ART_PROGRESS.md`, `docs/DEMO_CHECK.md`, `docs/DEVELOPMENT_PLAN.md`.
@@ -11,8 +11,8 @@
 
 ## Tiến độ phiên hiện tại
 
-- [ ] **PUB-01 DOING — GitHub/Vercel,10/10:** source đãpush `450af3575c64705d458b4761ccc200be59dc6ff2`. LocalbuildPASS;99regressionPASS và focusedhai journey gốc **2/2PASS,exit0,5,2phút** (Sword2,5/Mage2,7). Trace chỉ giảm ảnhcanvas; không đổi gameplay/thao tác journey. CIrun38056964136 buildPASS nhưng compositeprefix chạm30s; sửa riêng timeout90s/checkpointlog/failureartifact, localdeployment **2/2PASS,9,9s**. ĐangpushCIfix/chờCI mới và deploy Vercel `tan-nguyet-game.vercel.app`; domainverified/artifact28filekhớphash. Chưa báo webReady. [Quy trình](PUBLISHING.md).
-- **Thứ tự hiện tại:** hoàn thànhPUB-01 theo yêu cầu trực tiếp → trở về kế hoạchV02-00/P0-03 khi được giao phát triển tiếp. Không coi việc xuất bản là triển khai v0.2 hoặc Multiplayer.
+- [x] **PUB-01 DONE — GitHub/Vercel,10/10:** [Game public](https://tan-nguyet-game.vercel.app), [source](https://github.com/gamingbite/TAN-NGUYET). Codecommit `d437859e0b4d4dce77b53ea0517ac103efda69f6`; [CI38057331477](https://github.com/gamingbite/TAN-NGUYET/actions/runs/38057331477) SUCCESS. Verceldeployment `dpl_2xbETaXGWPcHB68dvHKjY8iS5SLp` READY/production, đúngdomain. Localbuild/99regressionPASS; focusedhai journey2/2PASS,exit0,5,2phút; deployment2/2PASS,9,9s. Public6/6stagePASS bằngbrowserkhôngcookie:HTTP200/art14PNG/di chuyển/menu/save/reload/Continue/fullviewport/Foundation,0JS/HTTP/requesterror;4ảnh. Không gọi hai lượtlocal riêng thànhfullverify101PASS; giữloglỗi cũ. [Bàn giao](PUBLISHING.md), `.cache/qa/2026-10-10-publish/release-result.json`. Không còn test/server cần nối; v0.2/P1 chưa triển khai.
+- **Thứ tự hiện tại:** PUB-01 đãDONE. Chờ yêu cầu phát triển tiếp; khi được giao thì V02-00/P0-03 theo probe cũ, không làm lại town/B2/UI hoặc tự mở P1/v0.2. Git/push/Vercel vẫn được phép trong repo/domain đã chốt; mỗi bản mới phải backup/kiểm tra và ghi trạng thái thật.
 
 ### Mốc lập kế hoạch đã hoàn thành trước yêu cầu xuất bản
 
