@@ -1,0 +1,30 @@
+{
+  "name": "tan-nguyet-the-cursed-kingdom",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Playable local single-player demo for Tan Nguyet - The Cursed Kingdom",
+  "type": "module",
+  "engines": {
+    "node": "^22.12.0 || >=24.0.0",
+    "npm": ">=10"
+  },
+  "packageManager": "npm@10.9.3",
+  "scripts": {
+    "dev": "vite",
+    "typecheck": "tsc --noEmit",
+    "build": "npm run typecheck && vite build",
+    "preview": "vite preview",
+    "test": "playwright test",
+    "verify": "npm run build && npm test",
+    "backup": "node scripts/backup.mjs"
+  },
+  "dependencies": {
+    "phaser": "3.90.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.0",
+    "@types/node": "22.19.0",
+    "typescript": "5.9.3",
+    "vite": "8.3.3"
+  }
+}

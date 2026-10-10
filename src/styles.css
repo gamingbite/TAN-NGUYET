@@ -1,0 +1,59 @@
+:root { color-scheme: dark; font-family: 'Segoe UI', sans-serif; color: #e6e5dd; background: #101719; font-synthesis: none; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; background: radial-gradient(ellipse at 30% 0%, #24312d66, transparent 60%), #101719; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { font: inherit; cursor: pointer; }
+button:disabled { opacity: .35; cursor: default; }
+button:focus-visible, a:focus-visible, #game:focus-visible { outline: 2px solid #d9bb7b; outline-offset: 4px; }
+[hidden] { display: none !important; }
+.page-shell { max-width: 1264px; padding: 0 48px; margin: auto; }
+.topbar { height: 94px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #879a8b26; }
+.brand { text-decoration: none; color: #e7d9b8; letter-spacing: .18em; font-family: Georgia, 'Times New Roman', serif; font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 14px; }
+.moon-mark { font-size: 36px; line-height: 1; color: #d9bb7b; }
+.local-tag { font-size: 10px; letter-spacing: .17em; color: #9ba99e; display: flex; align-items: center; gap: 9px; }
+.local-tag span, .status-dot { height: 5px; width: 5px; display: inline-block; background: #9fbe99; border-radius: 50%; }
+.intro { padding: 54px 0 37px; }
+.eyebrow { font-size: 10px; font-weight: 600; letter-spacing: .21em; color: #b39e74; margin: 0 0 16px; }
+h1 { font-family: Georgia, 'Times New Roman', serif; font-weight: 400; font-size: clamp(36px, 4.5vw, 54px); line-height: 1.18; letter-spacing: -.035em; margin: 0 0 17px; }
+.description { color: #9da8a2; max-width: 490px; font-size: 14px; line-height: 1.8; margin: 0; }
+.workspace { display: grid; grid-template-columns: minmax(0, 1fr) 275px; gap: 36px; padding-bottom: 56px; }
+.stage-heading { display: flex; justify-content: space-between; font-size: 9px; letter-spacing: .13em; color: #8c9991; padding: 0 0 13px; }
+.status-dot { margin: 0 7px 1px 0; }
+.stage-frame { width: 100%; aspect-ratio: 16 / 9; position: relative; background: #142623; border: 1px solid #70837844; box-shadow: 0 18px 70px #0003; }
+#game { position: absolute; inset: 0; width: 100%; height: 100%; }
+#game canvas { display: block; image-rendering: pixelated; }
+.stage-cover { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background: radial-gradient(ellipse at 50% 20%, #2c413a77, transparent 65%), linear-gradient(160deg, #1e302dee, #111c1bee); padding: 22px; }
+.cover-moon { color: #d9bb7b; font: 72px/.85 Georgia, serif; margin-bottom: 22px; text-shadow: 0 0 40px #d9bb7b30; }
+.stage-cover .eyebrow { font-size: 8px; margin-bottom: 12px; }
+.stage-cover h2 { font-family: Georgia, 'Times New Roman', serif; font-weight: 400; font-size: 28px; margin: 0 0 12px; }
+.stage-cover p:not(.eyebrow) { font-size: 12px; line-height: 1.8; color: #9dac9f; margin: 0 0 23px; }
+.primary-button { background: #d5ba83; color: #202621; padding: 12px 22px; border: 1px solid #e4cca0; font-size: 12px; font-weight: 600; }
+.primary-button:hover { background: #e3cd9f; }
+.primary-button span { padding-left: 24px; }
+.stage-toolbar { min-height: 54px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid #879a8b26; }
+.stage-toolbar p { color: #9ba99e; font-size: 11px; margin: 0; }
+.toolbar-actions { display: flex; gap: 14px; }
+.toolbar-actions button { background: none; border: none; padding: 8px 0; color: #cbbb97; font-size: 11px; }
+.control-guide { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; color: #7f9187; font-size: 10px; padding-top: 15px; }
+kbd { display: inline-block; background: #1c2825; border: 1px solid #83947f30; padding: 3px 5px; margin-right: 3px; font: 10px 'Segoe UI', sans-serif; color: #b6bca9; }
+.arrow-keys { margin: 0 6px; }
+.notes-panel { padding-top: 29px; }
+.notes-panel h2 { font-family: Georgia, 'Times New Roman', serif; font-size: 28px; font-weight: 400; line-height: 1.3; margin: 0 0 17px; }
+.notes-panel > p:not(.eyebrow):not(.footnote) { font-size: 12px; color: #96a39a; line-height: 1.8; margin: 0 0 28px; }
+.current-step, .next-step { display: flex; gap: 15px; padding: 17px 0; border-top: 1px solid #879a8b26; }
+.step-number { font-size: 11px; color: #beac85; padding-top: 2px; }
+.current-step strong, .next-step strong { display: block; font-size: 12px; font-weight: 500; margin-bottom: 5px; }
+.current-step div > span, .next-step div > span { display: block; font-size: 10px; color: #829487; }
+.next-step { opacity: .6; }
+.scope-note { display: flex; align-items: flex-start; gap: 13px; background: #8195760c; border-left: 2px solid #ab956244; padding: 15px; margin-top: 22px; }
+.scope-note > span { color: #b39e74; font-size: 15px; }
+.scope-note p { font-size: 11px; color: #91a091; line-height: 1.8; margin: 0; }
+.footnote { font-size: 10px; line-height: 1.8; color: #6e8277; padding-top: 15px; }
+.pause-overlay { position: absolute; inset: 0; background: #0d1916d9; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 22px; }
+.pause-overlay > span { font: 26px Georgia, serif; }
+.pause-overlay button { background: #d5ba83; color: #202621; border: none; padding: 10px 24px; font-size: 12px; }
+.runtime-error { color: #f0b0a0; font-size: 12px; line-height: 1.8; }
+footer { display: flex; justify-content: space-between; gap: 18px; padding: 25px 0 30px; border-top: 1px solid #879a8b26; font-size: 9px; color: #677c71; letter-spacing: .09em; }
+.footer-divider { margin: 0 8px; color: #9b885e; }
+@media (max-width: 850px) { .page-shell { padding: 0 24px; } .workspace { grid-template-columns: 1fr; gap: 18px; } .notes-panel { display: none; } .intro { padding-top: 38px; } .stage-cover h2 { font-size: 24px; } }
+@media (max-width: 480px) { .topbar { height: 76px; } .brand { font-size: 12px; gap: 8px; } .local-tag { font-size: 8px; letter-spacing: .05em; } .cover-moon { font-size: 40px; margin-bottom: 12px; } .stage-cover .eyebrow { display: none; } .stage-cover h2 { font-size: 20px; margin-bottom: 8px; } .stage-cover p:not(.eyebrow) { font-size: 10px; margin-bottom: 12px; } .primary-button { font-size: 10px; padding: 9px 15px; } .toolbar-actions { gap: 10px; } .stage-toolbar p { font-size: 9px; } .toolbar-actions button { font-size: 9px; } footer { flex-direction: column; } }

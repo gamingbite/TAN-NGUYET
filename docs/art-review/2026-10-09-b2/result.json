@@ -1,0 +1,132 @@
+{
+  "checkedAt": "2026-10-09T13:14:04.887Z",
+  "status": "passed",
+  "source": "local-file-gallery",
+  "images": [
+    {
+      "file": "identity.png",
+      "width": 1086,
+      "height": 1448,
+      "bytes": 1886164,
+      "sha256": "3e2f1a7ca9d6eafa39397da254278eb01b21892b5e83d94795f93623ec5c164f"
+    },
+    {
+      "file": "swordsman-states.png",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 2141356,
+      "sha256": "c109721bc4e84cd70a1a283ffa97f714190bbf6e39358375fd08478f34786573"
+    },
+    {
+      "file": "mage-states.png",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 2072918,
+      "sha256": "36522f32f0773619ac8fa1adea4e473890ddbb89d22bdba0e5555c688e032778"
+    },
+    {
+      "file": "swordsman-motion.png",
+      "width": 1086,
+      "height": 1448,
+      "bytes": 2099101,
+      "sha256": "36eaf82827a0107745f98f0b291f7423b3ed60b47246cfcbada538b28eca2383"
+    },
+    {
+      "file": "mage-motion.png",
+      "width": 1086,
+      "height": 1448,
+      "bytes": 2076604,
+      "sha256": "d37f004c5bb1e66e4d1d1f3febfedcf2b0a9e5e31da945963527f9b75006231f"
+    }
+  ],
+  "viewports": [
+    {
+      "width": 1280,
+      "height": 900,
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "firstImageTop": 594.640625,
+      "images": [
+        {
+          "loaded": true,
+          "width": 1086,
+          "height": 1448
+        },
+        {
+          "loaded": true,
+          "width": 1448,
+          "height": 1086
+        },
+        {
+          "loaded": true,
+          "width": 1448,
+          "height": 1086
+        },
+        {
+          "loaded": true,
+          "width": 1086,
+          "height": 1448
+        },
+        {
+          "loaded": true,
+          "width": 1086,
+          "height": 1448
+        }
+      ],
+      "errorStatuses": 0,
+      "screenshot": "overview.png",
+      "zoomKeyboard": "passed",
+      "themeToggle": "passed"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "firstImageTop": 726.4375,
+      "images": [
+        {
+          "loaded": true,
+          "width": 1086,
+          "height": 1448
+        },
+        {
+          "loaded": true,
+          "width": 1448,
+          "height": 1086
+        },
+        {
+          "loaded": true,
+          "width": 1448,
+          "height": 1086
+        },
+        {
+          "loaded": true,
+          "width": 1086,
+          "height": 1448
+        },
+        {
+          "loaded": true,
+          "width": 1086,
+          "height": 1448
+        }
+      ],
+      "errorStatuses": 0,
+      "screenshot": "overview-mobile.png",
+      "zoomKeyboard": "passed",
+      "themeToggle": "passed"
+    }
+  ],
+  "pageErrors": [],
+  "externalRequests": [],
+  "checks": [
+    "Five PNG signatures and dimensions",
+    "All five browser images decode",
+    "Desktop/mobile page width",
+    "Keyboard zoom and Escape/focus return",
+    "Light/dark page toggle",
+    "Original A–D gallery link",
+    "Zero page errors/external requests"
+  ],
+  "failures": []
+}

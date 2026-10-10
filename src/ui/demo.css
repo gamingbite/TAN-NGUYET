@@ -1,0 +1,305 @@
+:root{color-scheme:dark;font-family:'Segoe UI',Tahoma,sans-serif;font-synthesis:none;color:#e4e6dc;background:#101917;--gold:#d4bd86;--gold-soft:#a89773;--muted:#9cab9f;--border:#94a68d29;--surface:#17231f;--green:#94b399}
+*{box-sizing:border-box}
+body{margin:0;min-width:360px;background:radial-gradient(ellipse at 12% 0%,#354b3533,transparent 55%),#101917}
+button,input,select{font:inherit}
+button{cursor:pointer;-webkit-tap-highlight-color:transparent}
+button:disabled{opacity:.42;cursor:default}
+button:focus-visible,input:focus-visible,select:focus-visible,#game:focus-visible{outline:2px solid #ead4a2;outline-offset:3px}
+[hidden]{display:none!important}
+button{border-radius:2px}
+.title-shell,.game-shell{max-width:1500px;padding:0 48px;margin:0 auto}
+.demo-topbar{height:92px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:24px}
+.demo-brand{display:flex;align-items:center;gap:14px;color:#e7d9b9;letter-spacing:.2em;font:600 16px Cambria,'Segoe UI','Times New Roman',serif}
+.demo-brand small{display:block;font:8px 'Segoe UI',sans-serif;letter-spacing:.24em;color:#9d9d86;margin-top:7px}
+.moon-emblem{font:44px/.85 Cambria,'Segoe UI',serif;color:var(--gold);text-shadow:0 0 35px #d4bd8630}
+.demo-version{color:#99a894;font-size:9px;letter-spacing:.15em;white-space:nowrap;display:flex;align-items:center;gap:8px}
+.demo-version i{width:5px;height:5px;border-radius:50%;background:#adc797;box-shadow:0 0 10px #94b47d66}
+.demo-eyebrow{font-size:9px;color:var(--gold-soft);font-weight:600;letter-spacing:.18em;line-height:1.7;margin:0 0 12px}
+.title-content{min-height:calc(100vh - 160px);display:grid;grid-template-columns:1fr 410px;align-items:center;gap:7vw;padding:42px 0 50px}
+.title-story h1{font:400 clamp(36px,4.2vw,60px)/1.15 Cambria,'Segoe UI','Times New Roman',serif;letter-spacing:-.025em;margin:22px 0 24px;color:#e5e3d7}
+.title-story h1 em{font-style:normal;color:#cdb585;font-size:.8em;display:block;margin-top:10px}
+.title-description{font-size:13px;color:var(--muted);line-height:1.9;max-width:440px;margin:0}
+.title-path{display:flex;gap:30px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:20px 0;margin-top:30px;max-width:440px}
+.title-path span{font-size:11px;color:#c4cbbb}.title-path b{color:var(--gold-soft);font-size:10px;font-weight:400;margin-right:8px}
+.title-quote{font:italic 18px Cambria,'Segoe UI',serif;color:#c6b897;margin-top:28px}
+.title-footnote{font-size:10px;line-height:1.9;color:#7d9181;margin:28px 0 0}
+.runtime-error{font-size:12px;color:#ecac98;line-height:1.8;max-width:500px}
+.character-card{background:linear-gradient(145deg,#23302899,#18231e);border:1px solid #a7b89733;box-shadow:0 28px 85px #0003;padding:28px}
+.card-heading{display:flex;justify-content:space-between;gap:12px}.card-heading .demo-eyebrow{font-size:8px;margin-bottom:7px}
+.card-heading h2{font:400 24px/1.25 Cambria,'Segoe UI',serif;margin:0;color:#e2dfcd}.card-rune{color:#b9a574;font-size:28px}
+.character-preview{display:flex;align-items:center;gap:23px;border-bottom:1px solid var(--border);margin:18px 0 20px;padding-bottom:18px}
+.portrait-platform{position:relative;width:113px;height:119px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at 50% 75%,#afba8225,transparent 70%);border:1px solid #bfc09e1c}
+.platform-rune{position:absolute;left:8px;top:8px;color:#a0926459;font-size:15px}.preview-name{display:block;font:20px Cambria,'Segoe UI',serif;color:#ded5b9;max-width:190px;overflow-wrap:anywhere}.preview-detail{display:block;color:#a4b398;font-size:11px;margin-top:8px}.preview-level{display:block;color:#738776;font-size:7px;letter-spacing:.11em;margin-top:11px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;column-gap:16px;row-gap:14px}.form-field{display:flex;flex-direction:column;gap:7px;color:#a4ae99;font-size:10px}.form-field.full{grid-column:1/-1}.form-field>input,.form-field>select{background:#101b17;color:#d7dac9;border:1px solid #8a9b7b44;padding:9px 10px;width:100%;font-size:12px;height:38px}.form-field>select{padding-right:3px}.form-field>input:hover,.form-field>select:hover{border-color:#b5ad774d}#character-name{margin-bottom:15px}
+.demo-button{background:#26342b;color:#d9d3b9;border:1px solid #a7b38d4d;padding:11px 17px;font-size:12px;line-height:1.45;text-align:center;transition:background .15s,border-color .15s}
+.demo-button:hover:not(:disabled){background:#314335;border-color:#b1b98d88}.demo-button.primary{background:#d3b982;color:#20271e;border-color:#e8cfa0;font-weight:600}.demo-button.primary:hover:not(:disabled){background:#e4cc9b}.demo-button>span{margin-left:22px}.demo-button.small{font-size:11px;padding:8px 12px}.demo-button kbd{margin-left:18px;background:#18211a22;border-color:#293b3429;color:inherit}#create-button{display:block;width:100%;margin-top:22px}.continue-button{margin-top:25px;min-width:245px}.quiet-note{font-size:10px;line-height:1.8;color:#829682;margin:12px 0 0}.character-card .quiet-note{text-align:center;font-size:9px}
+.demo-footer{display:flex;justify-content:space-between;gap:16px;padding:22px 0;border-top:1px solid var(--border);color:#718474;font-size:8px;letter-spacing:.12em}.footer-gold{color:#af9865;margin:0 8px}
+.game-shell{max-width:1600px;padding:0 34px}.game-topbar{height:76px}.game-top-actions{display:flex;align-items:center;gap:24px}.top-action{border:0;background:none;color:#cbbd97;font-size:11px;padding:12px 0}.top-action:hover{color:#f2ddb0}.top-action kbd{margin-left:5px}
+.game-layout{display:grid;grid-template-columns:minmax(0,1fr) 228px;gap:30px;padding:24px 0 24px}.game-main{min-width:0}.zone-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}.zone-heading .demo-eyebrow{font-weight:400;font-size:8px;letter-spacing:.05em;margin:0 0 7px}.zone-heading h1{font:400 29px Cambria,'Segoe UI',serif;margin:0;color:#e4dfcd;line-height:1.15}.world-time{display:flex;flex-direction:column;text-align:right;gap:8px;color:#aaa786;font-size:10px;flex-shrink:0}#hud-combat{font-size:7px;letter-spacing:.14em;color:#7e9a84}#hud-combat[data-combat=true]{color:#e49b7c}
+.game-stage{position:relative;width:100%;aspect-ratio:16/9;background:#142321;border:1px solid #8a9c794d;box-shadow:0 22px 55px #0003;overflow:hidden}#game{position:absolute;inset:0;width:100%;height:100%}#game canvas{display:block;image-rendering:pixelated;image-rendering:crisp-edges}
+.interaction-prompt{position:absolute;bottom:17px;left:50%;transform:translateX(-50%);max-width:88%;width:max-content;background:#0e181aed;border:1px solid #bfa96c80;color:#e9dcb4;font-size:11px;text-align:center;padding:9px 15px;pointer-events:none;line-height:1.5;box-shadow:0 5px 25px #0004}.interaction-progress{height:3px;margin-top:8px;background:#9dab7429;overflow:hidden}.interaction-progress span{display:block;background:#dfc990;height:100%;width:0}
+.player-hud{display:grid;grid-template-columns:210px minmax(130px,1fr) auto;gap:20px;align-items:center;border-bottom:1px solid var(--border);padding:14px 2px}.hud-identity{display:flex;align-items:center;gap:11px;min-width:0}.hud-identity>div:last-child{min-width:0}.hud-identity strong{font-size:12px;font-weight:500;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:140px}.hud-identity>div>span{font-size:9px;color:#91a38c;display:block;margin-top:6px}.hud-identity span b{font-weight:400}.hud-identity span i{font-style:normal;color:#7f895d;margin:0 4px}.hud-vitals{display:grid;gap:7px;max-width:380px;width:100%}.vital-row{display:grid;grid-template-columns:18px 1fr 56px;gap:8px;align-items:center;font-size:8px;color:#b7c3a7}.vital-row>span{color:#d3937b;font-weight:600}.vital-row b{text-align:right;font-size:8px;font-weight:400;white-space:nowrap}.vital-track{height:5px;background:#632e302e;overflow:hidden}.vital-track>i{height:100%;background:linear-gradient(90deg,#b3635b,#ce8d71);display:block;transition:width .1s}.vital-row.mana>span{color:#85a4c2}.mana .vital-track{background:#364d682b}.mana .vital-track>i{background:linear-gradient(90deg,#54799c,#8ca7c0)}.xp-line{display:flex;justify-content:space-between;color:#788e76;font-size:8px;padding-left:26px;padding-top:1px}.hud-wallet{display:grid;grid-template-columns:1fr;gap:6px;font-size:8px;color:#9ba98f}.hud-wallet>span{display:flex;align-items:center;gap:5px;white-space:nowrap}.hud-wallet b{font-weight:400;color:#d0d4be;min-width:16px}.coin{display:inline-block;border-radius:50%;width:7px;height:7px;border:1px solid #ffffff3d}.coin.copper{background:#b78356}.coin.silver{background:#aab5b3}.coin.gold{background:#d5b460}
+.action-bar{padding:13px 0 6px;display:flex;justify-content:space-between;gap:10px;align-items:center}.combat-shortcuts{display:flex;gap:13px;flex-wrap:wrap}.skill-key,.potion-key{display:flex;align-items:center;gap:5px;font-size:9px;color:#97a88e}.potion-key{background:none;border:none;padding:0;color:#b8bf9d}.potion-key:hover{color:#e5d09b}.potion-key b{font-weight:400;color:#8c9e86}.cooldown-label{font-size:8px;color:#b19d6f;white-space:nowrap}.game-controls{display:flex;justify-content:space-between;flex-wrap:wrap;gap:9px;color:#6e8978;font-size:8px;padding-top:7px}kbd{display:inline-block;background:#202e25;border:1px solid #91a27e33;padding:3px 5px;font:9px 'Segoe UI',sans-serif;color:#c0c7ad;line-height:1.2;white-space:nowrap;border-radius:2px}
+.journey-sidebar{padding-top:8px}.journey-heading{display:flex;justify-content:space-between;gap:10px;align-items:center;color:#b09c6e}.journey-heading .demo-eyebrow{font-size:8px;margin:0}.journey-sidebar h2{font:26px/1.3 Cambria,'Segoe UI',serif;color:#ddd8be;margin:17px 0 25px}.quest-tracker{border-left:2px solid #bfa47399;padding:1px 0 1px 14px;margin:0 0 24px}.tracker-status{font-size:8px;color:#b39c6e;letter-spacing:.07em}.quest-tracker h3{font-size:12px;font-weight:500;color:#d5d7c5;margin:9px 0}.quest-tracker p{font-size:10px;color:#9dab98;line-height:1.8;margin:0}.journey-step{display:flex;gap:12px;padding:14px 0;border-top:1px solid var(--border);opacity:.56}.journey-step>span{font-size:10px;color:#b2a275;min-width:16px}.journey-step strong{font-weight:400;display:block;font-size:10px;color:#b6bfa5}.journey-step small{display:block;color:#7f947d;font-size:8px;margin-top:5px}.journey-step.active{opacity:1}.journey-step.done{opacity:.85}.journey-step.done>span{color:#9fbb8e}.panel-navigation{margin-top:16px;border-top:1px solid var(--border)}.panel-navigation button{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;background:none;border:0;border-bottom:1px solid #91a27e17;color:#b7c0a9;font-size:10px;padding:11px 3px;text-align:left}.panel-navigation button:hover{color:#e6d29b;background:#a7b58a08}.panel-navigation button>span:last-child:not(:first-child){color:#a9a681}.sidebar-note{font-size:9px;color:#6e8a75;line-height:1.9;margin-top:22px}.free-explore{font-size:10px;line-height:1.8;color:#bbca96;margin-top:16px;display:block}.game-footer{padding:17px 0;font-size:7px}
+.panel-overlay{position:fixed;inset:0;z-index:40;background:#060f12c9;backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:24px}.game-panel{width:min(860px,100%);max-height:calc(100dvh - 48px);display:flex;flex-direction:column;background:linear-gradient(135deg,#243129,#14221e);border:1px solid #a5b28a55;box-shadow:0 30px 100px #000a}.panel-header{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;padding:24px 28px 20px;border-bottom:1px solid var(--border);flex-shrink:0}.panel-header .demo-eyebrow{font-size:8px;margin:0 0 9px}.panel-header h2{font:400 28px Cambria,'Segoe UI',serif;color:#e0dbc4;margin:0}.panel-close{border:1px solid #94a68d2e;background:#a4b38908;width:32px;height:32px;color:#c6c7ad;font:24px/1 Cambria,'Segoe UI',serif}.panel-close:hover{background:#b8bf9933}.panel-content{overflow-y:auto;padding:24px 28px;scrollbar-color:#6c806844 #12221a;min-height:0}.panel-footer{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:13px 28px;border-top:1px solid var(--border);font-size:9px;color:#869d83;flex-shrink:0}.panel-footer kbd{margin-right:6px}.panel-intro{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;margin-bottom:18px}.panel-intro p,.panel-note{color:#9caf9b;font-size:11px;line-height:1.8;margin:0}.capacity-label{color:#d5c599;font-size:10px;white-space:nowrap;padding:6px 9px;background:#aec0840d;border:1px solid #bbc29b26}.loadout-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px;padding:15px;background:#0c1a1244;border:1px solid #9fb28b22}.loadout-strip>span{font-size:10px;color:#c1caaf;line-height:1.5}.loadout-strip small{display:block;font-size:8px;color:#8da282;margin-bottom:5px}.inventory-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.inventory-slot{border:1px solid #a4b28a35;background:#16251e;padding:13px;min-height:172px;display:flex;flex-direction:column}.inventory-slot.equipped-slot{border-color:#baa57466;background:#a5965c0b}.item-top{display:flex;justify-content:space-between;align-items:center}.item-icon{font:25px/1.3 'Segoe UI Symbol','Segoe UI',sans-serif;color:#d2be82;display:inline-block;min-width:34px;text-align:center}.item-quantity{font-size:9px;color:#a7ba97}.inventory-slot h3{font-size:11px;font-weight:500;color:#d3d8bc;line-height:1.5;margin:10px 0 6px}.inventory-slot p{font-size:9px;color:#8fa585;line-height:1.7;margin:0 0 10px}.inventory-slot .demo-button{margin-top:auto;align-self:flex-start;font-size:10px;padding:5px 9px}.item-equipped{font-size:8px;color:#c4ae70;margin:0 0 9px}.empty-slot{align-items:center;justify-content:center;min-height:100px;background:#11201944;border-style:dashed;color:#5c715d66}.class-section{margin-top:25px}.class-section h3,.section-title,.help-layout h3{font:20px Cambria,'Segoe UI',serif;color:#d9d6bf;font-weight:400;margin:0 0 12px}.class-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}.class-card{padding:17px;background:#11211977;border:1px solid #9caf8d30;position:relative}.class-card.active{border-color:#b7aa755c}.class-icon{position:absolute;top:12px;right:16px;font-size:27px;color:#bdaa7480}.class-card h4{font:18px Cambria,'Segoe UI',serif;color:#d7c69a;margin:0 0 10px}.class-card p{font-size:10px;color:#8da385;line-height:1.6;margin:0 0 14px}.class-card .demo-button{font-size:10px}.class-section>.panel-note{margin-top:16px}
+.quest-list{display:flex;flex-direction:column;gap:14px}.quest-card{padding:19px 20px;border:1px solid #a1b28a35;background:#12241a66}.quest-card[data-status=locked]{opacity:.65}.quest-card[data-status=ready]{border-color:#c8b36d66}.quest-card-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:13px}.quest-card-heading h3{font:19px Cambria,'Segoe UI',serif;color:#d8d7bd;margin:0}.quest-status{font-size:8px;white-space:nowrap;color:#8ea883;letter-spacing:.04em;padding:4px 7px;background:#a4bb7e0c}.quest-status.ready{color:#d7c186;background:#c7b76f10}.quest-status.done{color:#b1c895}.quest-card p{font-size:11px;line-height:1.8;color:#93a88c;margin:0 0 12px}.quest-card p.quest-objective{font-size:11px;color:#cac3a0}.quest-reward{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:9px;color:#ae9f76;border-top:1px solid #a5b08d1f;padding-top:12px}.quest-list+.panel-note{margin-top:18px}.recipe-list{display:grid;gap:12px;margin-top:19px}.recipe-card{display:flex;align-items:flex-start;gap:17px;border:1px solid #a1b28a35;background:#13251b55;padding:17px}.recipe-card>.item-icon{padding-top:10px;font-size:30px}.recipe-details{flex:1;min-width:0}.recipe-station{font-size:7px;letter-spacing:.15em;color:#9c9d6f}.recipe-details h3{font:19px Cambria,'Segoe UI',serif;color:#d8d6b9;margin:7px 0}.recipe-details p{font-size:10px;line-height:1.7;color:#95a888;margin:0 0 12px}.ingredients{display:flex;flex-wrap:wrap;gap:8px}.ingredient{font-size:9px;padding:4px 7px;color:#a7c195;background:#8da97c0d;border:1px solid #95b0782b}.ingredient b{font-weight:400;margin-left:6px}.ingredient.missing{color:#d0a489;border-color:#bc937029}.recipe-action{display:flex;flex-direction:column;align-items:flex-end;justify-content:center;gap:12px;align-self:center;min-width:116px}.known-recipe{font-size:9px;color:#a0bf8e}.unknown-recipe{font-size:9px;color:#989772}
+.npc-dialogue{display:flex;gap:20px;padding:20px;background:#9fb8880a;border-left:2px solid #c5ad7399;margin-bottom:24px}.npc-symbol{color:#d3ba80;font:40px/1.2 'Segoe UI Symbol','Segoe UI',sans-serif;min-width:42px}.npc-dialogue p{font:17px/1.8 Cambria,'Segoe UI','Times New Roman',serif;color:#d4d4bc;margin:0 0 10px}.dialogue-note{font-size:9px;color:#839b7d}.merchant-wallet{font-size:12px;color:#a5b69b;border-bottom:1px solid var(--border);padding-bottom:18px;margin-bottom:20px}.merchant-wallet strong{color:#d5bc80;font-weight:500}.merchant-wallet>span{font-size:9px;color:#8aa17f}.trade-list{display:grid;gap:0;border-top:1px solid #90a67d26;margin-bottom:25px}.trade-row{display:flex;align-items:center;gap:18px;padding:13px 0;border-bottom:1px solid #90a67d26}.trade-row>div{flex:1;min-width:0}.trade-row h4{font-size:12px;font-weight:500;color:#cbd1b4;margin:0 0 6px}.trade-row h4 small{font-size:9px;margin-left:6px;color:#88a07d}.trade-row p{font-size:10px;line-height:1.6;color:#8ca582;margin:0}.trade-row .demo-button{min-width:120px;flex-shrink:0}
+.map-layout{display:grid;grid-template-columns:1.3fr 1fr;gap:24px}.map-canvas-wrap{background:#0c1915;border:1px solid #a1b08a29;padding:10px;align-self:start}#discovery-map{display:block;width:100%;height:auto;image-rendering:pixelated}.map-legend{display:flex;justify-content:space-between;gap:8px;font-size:8px;color:#8ba07e;padding:13px 6px 3px}.map-legend span{display:flex;align-items:center;gap:6px}.map-legend i{width:6px;height:6px;background:#253626}.map-legend .legend-player{background:#e3cd8d;border-radius:50%}.map-legend .legend-explored{background:#4e7652}.map-legend .legend-fog{background:#10231c;border:1px solid #55684c}.map-guide h3{font:22px/1.35 Cambria,'Segoe UI',serif;color:#d3d0b4;margin:0 0 14px}.map-guide>p,.map-guide li{font-size:10px;line-height:1.9;color:#98ae8c}.map-guide ul{padding-left:14px;margin:13px 0 18px}.map-guide li{margin-bottom:6px}.travel-card{padding:17px;border:1px solid #adad7044;background:#b5aa6610}.travel-card strong{font-size:11px;font-weight:500;color:#d5c38a}.travel-card p{font-size:10px;line-height:1.8;color:#a1b18c;margin:10px 0 13px}.travel-card .demo-button{font-size:10px}.help-layout{display:grid;grid-template-columns:1fr 1fr;gap:30px}.controls-list{margin:0}.controls-list>div{padding:11px 0;border-bottom:1px solid #a1b58a20}.controls-list dt{font-size:10px;color:#bec7a8}.controls-list dd{font-size:10px;color:#8ba781;line-height:1.8;margin:8px 0 0}.first-journey{padding-left:20px;font-size:11px;line-height:1.8;color:#a1b294;margin:0}.first-journey li{padding-left:3px;margin-bottom:12px}.help-layout .panel-note{margin-top:19px}
+.compact-panel{max-width:480px}.pause-body{text-align:center;max-width:350px;margin:0 auto;padding:8px 0}.large-moon{font:70px/.85 Cambria,'Segoe UI',serif;color:#d2b97c;display:block;margin:8px 0 23px}.pause-body>p:not(.quiet-note){font:17px/1.6 Cambria,'Segoe UI',serif;color:#cccdb4;margin:0 0 24px}.pause-body>.demo-button{display:block;width:100%;margin-top:12px}.pause-body .quiet-note{margin-top:20px;font-size:9px}.ending-body{text-align:center;max-width:550px;margin:0 auto;padding:10px 0 16px}.ending-symbol{font:110px/1 Cambria,'Segoe UI',serif;color:#dfc687;text-shadow:0 0 60px #d9bb7133;margin-bottom:23px}.ending-text{font:26px/1.6 Cambria,'Segoe UI',serif;color:#e0d5b3;margin:0 0 20px}.ending-body>p:not(.ending-text){font-size:12px;line-height:1.9;color:#a2b393}.ending-stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:22px 0;margin:28px 0;color:#90a581;font-size:9px}.ending-stats b{display:block;font:28px Cambria,'Segoe UI',serif;color:#d2c595;margin-bottom:8px}.ending-body>.demo-button{display:block;width:min(310px,100%);margin:12px auto 0}
+.demo-toast{position:fixed;z-index:80;left:50%;bottom:27px;transform:translateX(-50%);width:max-content;max-width:min(700px,calc(100vw - 40px));padding:13px 21px;background:#1e3527f5;border:1px solid #b0c48655;color:#e0d9b3;box-shadow:0 10px 40px #0007;font-size:12px;line-height:1.6;text-align:center;pointer-events:none}.demo-toast[data-tone=danger]{background:#342a24f5;color:#edbea5;border-color:#bf957466}.demo-toast[data-tone=success]{border-color:#bdc48877}
+/* Original, CSS-drawn pixel portraits; clothing is a civilian preview, not a cosmetic system. */
+.b2-portrait{display:block;width:76px;height:100px;object-fit:contain;image-rendering:pixelated;flex-shrink:0}
+.b2-portrait.hud-portrait{width:48px;height:53px;transform:scale(1.4);transform-origin:center;margin:0}
+#hud-avatar{display:block;flex-shrink:0}
+.pixel-portrait{position:relative;display:block;width:70px;height:100px;image-rendering:pixelated;--skin:#e7bd92;--hair:#493b36;flex-shrink:0}
+.pixel-portrait>span{position:absolute;display:block}.portrait-shadow{bottom:3px;left:8px;width:55px;height:9px;background:#020d074d;box-shadow:3px 0 #020d074d,-3px 0 #020d074d}.portrait-head{top:20px;left:20px;width:30px;height:28px;background:var(--skin);box-shadow:4px 4px var(--skin),-4px 4px var(--skin),0 4px var(--skin)}.portrait-hair{top:14px;left:16px;width:38px;height:12px;background:var(--hair);box-shadow:4px 4px var(--hair),-4px 4px var(--hair),0 -4px var(--hair)}.portrait-hair::before{content:'';position:absolute;left:0;top:10px;width:7px;height:14px;background:var(--hair)}.portrait-hair::after{content:'';position:absolute;right:0;top:10px;width:7px;height:14px;background:var(--hair)}.portrait-hair-back{top:24px;left:14px;width:42px;height:30px;background:var(--hair)}.portrait-eyes{top:34px;left:24px;width:4px;height:4px;background:#2e3330;box-shadow:16px 0 #2e3330}.portrait-body{top:51px;left:19px;width:32px;height:29px;background:#63785a;box-shadow:4px 3px #63785a,-4px 3px #63785a,0 4px #63785a}.portrait-body::before{content:'';position:absolute;top:0;left:12px;width:8px;height:6px;background:var(--skin)}.portrait-arms{top:57px;left:10px;width:8px;height:15px;background:#758966;box-shadow:42px 0 #758966,0 13px var(--skin),42px 13px var(--skin)}.portrait-belt{top:72px;left:15px;width:40px;height:5px;background:#7c6341}.portrait-belt::after{content:'';position:absolute;left:17px;top:0;width:6px;height:5px;background:#b5a060}.portrait-feet{top:83px;left:19px;width:11px;height:12px;background:#4b493a;box-shadow:20px 0 #4b493a}.portrait-ears{top:29px;left:12px;width:5px;height:10px;background:var(--skin);box-shadow:41px 0 var(--skin)}.pixel-portrait[data-race=elf] .portrait-ears{left:5px;width:14px;height:6px;box-shadow:46px 0 var(--skin);top:27px}.pixel-portrait[data-race=elf] .portrait-ears::before{content:'';position:absolute;left:-5px;top:-4px;width:6px;height:4px;background:var(--skin)}.pixel-portrait[data-race=elf] .portrait-ears::after{content:'';position:absolute;left:59px;top:-4px;width:6px;height:4px;background:var(--skin)}.pixel-portrait[data-race=dwarf]{transform:scaleY(.85);transform-origin:bottom}.pixel-portrait[data-race=dwarf] .portrait-body{left:15px;width:40px}.pixel-portrait[data-race=dwarf] .portrait-head{left:17px;width:36px}.pixel-portrait[data-race=dwarf][data-gender=male] .portrait-eyes::after{content:'';position:absolute;left:-2px;top:10px;width:24px;height:12px;background:var(--hair);box-shadow:4px 5px var(--hair)}.pixel-portrait[data-race=beast] .portrait-ears{top:3px;left:12px;width:12px;height:20px;background:var(--hair);box-shadow:34px 0 var(--hair)}.pixel-portrait[data-race=beast] .portrait-ears::after{content:'';position:absolute;left:4px;top:4px;width:4px;height:8px;background:var(--skin);box-shadow:34px 0 var(--skin)}.pixel-portrait[data-race=beast] .portrait-head::after{content:'';position:absolute;left:13px;top:22px;width:5px;height:4px;background:#685248}.pixel-portrait[data-hair=short] .portrait-hair-back{height:20px}.pixel-portrait[data-hair=long] .portrait-hair-back{height:45px}.pixel-portrait[data-hair=braid] .portrait-hair-back{left:43px;width:12px;height:44px;box-shadow:-3px 8px var(--hair)}.pixel-portrait[data-gender=male] .portrait-body{background:#62766c}.pixel-portrait.hud-portrait{width:42px;height:51px;transform:scale(.5);transform-origin:0 50%;margin-right:-7px;margin-left:0}.pixel-portrait.hud-portrait>span{transform:translateY(-25px)}
+@media(min-width:1100px) and (max-height:880px){.game-shell{max-width:1380px}.game-layout{grid-template-columns:minmax(0,1fr) 210px;padding-top:18px;gap:25px}.game-main{max-width:calc((100vh - 304px)*16/9);width:100%}.game-layout{justify-content:center}.game-topbar{height:65px}.zone-heading{margin-bottom:13px}.zone-heading h1{font-size:26px}.player-hud{padding:10px 2px;gap:15px;grid-template-columns:185px minmax(130px,1fr) auto}.game-footer{padding:14px 0}.journey-sidebar h2{font-size:24px;margin-bottom:18px}.journey-step{padding:11px 0}.panel-navigation button{padding:10px 3px}.quest-tracker{margin-bottom:18px}.sidebar-note{margin-top:17px}.game-layout{padding-bottom:20px}.game-main{justify-self:end}.action-bar{padding-top:10px}.combat-shortcuts{gap:9px}.game-controls{gap:6px}.title-content{padding:30px 0}.title-shell{max-width:1280px}.title-story h1{font-size:clamp(35px,4.1vw,54px)}.character-card{padding:23px}.form-grid{row-gap:10px}.title-path{padding:17px 0;margin-top:25px}}
+@media(min-width:1500px){.title-content{gap:110px}.title-shell{max-width:1390px}.title-story h1{font-size:65px}}
+@media(max-width:1100px){.title-shell,.game-shell{padding:0 26px}.title-content{gap:40px;grid-template-columns:minmax(0,1fr) 370px}.title-story h1{font-size:43px}.title-path{gap:17px}.character-card{padding:22px}.game-layout{grid-template-columns:minmax(0,1fr) 195px;gap:22px}.player-hud{grid-template-columns:150px 1fr auto;gap:12px}.hud-identity strong{max-width:100px}.zone-heading h1{font-size:25px}.game-top-actions{gap:18px}.combat-shortcuts{gap:8px}.skill-key,.potion-key{font-size:8px}.game-controls{font-size:7px}.journey-sidebar h2{font-size:24px}.journey-heading .demo-eyebrow{font-size:7px}.inventory-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.hud-identity{gap:7px}}
+@media(max-width:860px){.title-content{grid-template-columns:1fr;max-width:540px;margin:auto;gap:32px;padding-top:32px}.title-story h1{font-size:42px}.title-story .demo-eyebrow{font-size:8px}.title-description{max-width:100%}.title-story h1 br{display:none}.title-story h1 em{display:block;margin-top:9px}.title-quote,.title-footnote{display:none}.title-path{max-width:100%;justify-content:space-between}.character-card{padding:25px}.title-shell .demo-footer{margin-top:10px}.game-layout{grid-template-columns:minmax(0,1fr);gap:20px;padding-top:22px}.journey-sidebar{display:grid;grid-template-columns:1fr 1fr;gap:15px 25px;padding:16px 0;border-top:1px solid var(--border)}.journey-heading{grid-column:1/-1}.journey-sidebar h2{display:none}.quest-tracker{margin:0}.journey-steps{display:none}.panel-navigation{margin:0;border:0}.panel-navigation button:first-child{padding-top:0}.sidebar-note{margin:0;grid-column:1/-1;display:none}.free-explore{grid-column:1/-1;margin:0}.zone-heading h1{font-size:27px}.player-hud{grid-template-columns:175px 1fr auto;gap:17px}.hud-identity strong{max-width:125px}.combat-shortcuts{gap:16px}.skill-key,.potion-key{font-size:9px}.game-topbar{height:78px}.game-top-actions .demo-version{display:none}.help-layout,.map-layout{grid-template-columns:1fr}.map-canvas-wrap{max-width:550px}.map-guide{padding-top:4px}.map-guide ul{display:none}.recipe-card{gap:13px}.panel-content{padding:20px}.panel-header{padding:21px 20px}.panel-footer{padding:12px 20px}.demo-footer{font-size:7px}}
+@media(max-width:540px){.title-shell,.game-shell{padding:0 16px}.demo-topbar{height:75px;gap:12px}.demo-brand{font-size:12px;gap:10px}.moon-emblem{font-size:37px}.demo-brand small{font-size:6px;letter-spacing:.15em}.demo-version{font-size:7px;letter-spacing:.04em}.title-story h1{font-size:36px}.title-content{padding-top:25px}.title-description{font-size:12px}.title-path{gap:7px}.title-path span{font-size:10px}.title-path b{margin-right:5px}.card-heading h2{font-size:23px}.character-card{padding:20px}.character-preview{gap:15px}.preview-name{font-size:19px;max-width:160px}.demo-footer{flex-direction:column;gap:10px}.game-top-actions{gap:12px}.top-action{font-size:9px}.top-action kbd{display:none}.game-topbar .demo-brand small{display:none}.zone-heading h1{font-size:24px}.zone-heading .demo-eyebrow{max-width:210px;font-size:7px}.world-time{font-size:8px}#hud-combat{font-size:6px}.player-hud{grid-template-columns:140px 1fr;gap:14px;padding:12px 0}.hud-wallet{grid-column:1/-1;display:flex;justify-content:flex-end;gap:14px;font-size:8px;margin-top:-2px}.hud-identity{gap:5px}.hud-identity strong{max-width:94px;font-size:10px}.hud-identity>div>span{font-size:8px}.vital-row{gap:5px;grid-template-columns:15px 1fr 48px}.vital-row b{font-size:7px}.xp-line{font-size:7px;padding-left:20px}.action-bar{display:block}.combat-shortcuts{gap:12px 13px}.skill-key,.potion-key{font-size:8px}.cooldown-label{display:block;margin-top:6px}.game-controls{font-size:7px;gap:8px}.game-controls>span:last-child{display:none}.journey-sidebar{gap:12px 18px;grid-template-columns:1fr 130px}.quest-tracker h3{font-size:11px}.quest-tracker p{font-size:9px}.journey-heading .demo-eyebrow{font-size:7px}.panel-navigation button{font-size:9px;padding:9px 0}.panel-navigation kbd{font-size:8px}.panel-overlay{padding:12px}.game-panel{max-height:calc(100dvh - 24px)}.panel-header h2{font-size:24px}.panel-header .demo-eyebrow{font-size:7px;max-width:220px}.panel-content{padding:17px}.panel-footer{font-size:8px;padding:11px 17px;gap:10px}.panel-intro p{font-size:10px}.capacity-label{font-size:9px}.inventory-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.inventory-slot{padding:11px;min-height:170px}.loadout-strip{gap:10px;padding:12px}.loadout-strip>span{font-size:9px}.class-card{padding:13px}.class-icon{font-size:22px;right:11px}.class-card h4{font-size:17px}.class-card p{font-size:9px;max-width:100px}.class-card .demo-button{font-size:9px;padding:7px 10px}.quest-card{padding:15px}.quest-card-heading{flex-wrap:wrap;gap:9px}.quest-card-heading h3{font-size:18px}.quest-card p{font-size:10px}.quest-card p.quest-objective{font-size:10px}.npc-dialogue{gap:12px;padding:15px}.npc-symbol{font-size:31px;min-width:31px}.npc-dialogue p{font-size:15px}.recipe-card{gap:12px;flex-wrap:wrap;padding:15px}.recipe-card>.item-icon{font-size:24px;min-width:25px}.recipe-details{min-width:200px}.recipe-details h3{font-size:18px}.recipe-action{width:100%;flex-direction:row;justify-content:space-between;align-items:center}.trade-row{gap:10px;flex-wrap:wrap}.trade-row .item-icon{font-size:23px;min-width:28px}.trade-row .demo-button{min-width:96px;font-size:9px;padding:7px}.trade-row h4{font-size:10px}.trade-row p{font-size:9px}.trade-row>div{min-width:170px}.merchant-wallet>span{display:block;margin-top:7px}.ending-text{font-size:22px}.ending-symbol{font-size:90px}.demo-toast{bottom:17px;font-size:11px;padding:11px 16px}.portrait-platform{width:105px}.free-explore{font-size:9px}.game-footer{padding:15px 0}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* The world gets the window; guides and the journal open in their own panels. */
+.item-icon img{display:block;width:32px;height:32px;image-rendering:pixelated;margin:auto}
+#app[data-screen=title]{min-height:100dvh;background:linear-gradient(90deg,#101917dc 0%,#10191788 48%,#10191755 100%),linear-gradient(0deg,#101917 0%,transparent 35%),url('/assets/ui/title_landscape_v1.png') center/cover no-repeat}
+#app[data-screen=title] .character-card{background:linear-gradient(135deg,#243129f2,#17231ff2);box-shadow:0 20px 70px #0006}
+#app[data-screen=title] .title-story{text-shadow:0 2px 5px #101917}
+.game-shell{max-width:none;padding:0 16px;--game-chrome-height:180px}
+.game-shell .game-topbar{height:50px;gap:16px}
+.game-shell .demo-brand{font-size:14px}
+.game-shell .demo-brand small{font-size:7px;margin-top:4px}
+.game-shell .moon-emblem{font-size:34px}
+.game-shell .game-top-actions{gap:22px}
+.game-toolbar .panel-navigation{display:flex;flex-wrap:wrap;justify-content:center;gap:0;margin:0;border-top:0;border-bottom:1px solid var(--border)}
+.game-toolbar .panel-navigation button{width:auto;min-height:40px;padding:8px 17px;gap:10px;border-bottom:0;white-space:nowrap}
+.game-shell .game-layout{display:block;padding:8px 0 6px}
+.game-shell .game-main{width:100%;max-width:none;min-width:0;justify-self:stretch}
+.game-shell .game-stage{width:min(100%,max(320px,calc((100dvh - var(--game-chrome-height))*16/9)));margin:0 auto;box-shadow:0 10px 30px #0003}
+.game-stage .zone-heading{position:absolute;z-index:3;top:12px;left:14px;right:14px;margin:0;align-items:flex-start;pointer-events:none;text-shadow:0 2px 2px #101917,1px 0 2px #101917,-1px 0 2px #101917}
+.game-stage .zone-heading h1{font-size:22px}
+.game-stage .zone-heading .demo-eyebrow{font-size:9px;margin-bottom:3px}
+.game-stage .world-time{font-size:11px;gap:5px}
+.game-stage .free-explore{font-size:10px;margin:0}
+.game-status{display:grid;grid-template-columns:minmax(410px,.9fr) minmax(0,1.2fr);gap:20px;align-items:center;width:100%;max-width:1600px;margin:0 auto}
+.game-status .player-hud{grid-template-columns:155px minmax(130px,1fr) auto;gap:12px;padding:8px 0;border-bottom:0}
+.game-status .hud-identity{gap:8px}
+.game-status .hud-identity strong{max-width:110px}
+.game-status .hud-vitals{gap:5px;max-width:360px}
+.game-status .hud-wallet{gap:4px}
+.game-status .action-bar{display:flex;gap:10px;padding:8px 0;justify-content:flex-end;flex-wrap:wrap}
+.game-status .combat-shortcuts{gap:8px 12px;justify-content:flex-end}
+.game-status .skill-key{font-size:10px;min-height:34px}
+.game-status .potion-key{font-size:10px}
+.game-status .cooldown-label:empty{display:none}
+.quest-overview{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px}
+.quest-overview .quest-tracker{margin:0}
+.quest-overview .journey-step:first-child{border-top:0;padding-top:0}
+.help-save{grid-column:1/-1;border-top:1px solid var(--border);padding-top:20px}
+.help-save p{font-size:13px;line-height:1.8;color:#a5b59c}
+@media(max-width:1100px){
+  .game-shell{padding:0 12px;--game-chrome-height:222px}
+  .game-toolbar .panel-navigation button{padding:8px 12px;font-size:11px}
+  .game-status{display:block}
+  .game-status .player-hud{grid-template-columns:180px minmax(140px,1fr) auto;padding:6px 0}
+  .game-status .hud-identity strong{max-width:135px}
+  .game-status .action-bar{justify-content:center;padding:3px 0 5px}
+  .game-status .combat-shortcuts{justify-content:center}
+}
+@media(max-width:740px){
+  .game-shell{--game-chrome-height:262px}
+  .game-toolbar .panel-navigation button{flex:1 0 22%;justify-content:center;min-height:35px;padding:7px 8px;font-size:10px}
+  .game-stage .zone-heading h1{font-size:18px}
+  .game-stage .zone-heading .demo-eyebrow{display:none}
+  .game-stage .world-time{font-size:9px}
+  .game-stage:has(.boss-hud:not([hidden])) .zone-heading{visibility:hidden}
+  .quest-overview{grid-template-columns:1fr;gap:15px}
+}
+@media(max-width:540px){
+  .game-shell{padding:0 8px;--game-chrome-height:286px}
+  .game-shell .game-topbar{height:48px}
+  .game-shell .demo-brand{font-size:11px;gap:7px}
+  .game-shell .game-top-actions{gap:12px}
+  .game-stage .zone-heading{top:8px;left:9px;right:9px}
+  .game-stage .zone-heading h1{font-size:15px}
+  .game-stage .world-time{font-size:8px}
+  .game-status .player-hud{grid-template-columns:135px minmax(0,1fr);gap:9px}
+  .game-status .hud-wallet{grid-column:1/-1;display:flex;justify-content:flex-end;gap:12px;margin-top:-5px}
+  .game-status .hud-identity strong{max-width:90px}
+  .game-status .combat-shortcuts{gap:6px 11px}
+  .game-status .skill-key,.game-status .potion-key{font-size:9px}
+}
+
+/* Readable Vietnamese HUD and functional local settings/save tools. */
+.game-shell{--quest-guide-space:58px}
+.game-shell .game-stage,.quest-guide{width:min(100%,max(320px,calc((100dvh - var(--game-chrome-height) - var(--quest-guide-space))*16/9)))}
+.game-shell:has(.quest-guide[hidden]){--quest-guide-space:0px}
+.quest-guide{display:flex;align-items:center;gap:12px;min-height:50px;margin:6px auto 0;padding:7px 12px;box-sizing:border-box;background:#1a2922;border:1px solid #c9b47955;border-left:3px solid #e2c681}
+.quest-guide[hidden]{display:none}
+.quest-guide-symbol{color:#f1d58c;font-size:22px;flex-shrink:0}
+.quest-guide>div{min-width:0}
+.quest-guide strong{display:block;color:#eee4bf;font-size:12px;line-height:1.5;font-weight:600}
+.quest-guide p{display:flex;flex-wrap:wrap;gap:2px 12px;margin:2px 0 0;font-size:11px;line-height:1.5;overflow-wrap:anywhere}
+#quest-guide-label{color:#d7c28b}#quest-guide-action{color:#b6c5ab}
+@media(max-width:740px){.game-shell{--quest-guide-space:80px}.quest-guide{gap:9px;padding:6px 9px}.quest-guide strong{font-size:11px}.quest-guide p{font-size:10px;gap:0 8px}.quest-guide-symbol{font-size:18px}}
+.title-utilities{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.title-utilities .demo-button{background:#192920;font-size:12px}
+.hud-identity strong{font-size:13px}.hud-identity>div>span{font-size:11px}
+.vital-row{grid-template-columns:25px minmax(50px,1fr) 72px;font-size:11px}
+.vital-row b{font-size:10px}.xp-line{font-size:10px}.hud-wallet{font-size:10px}
+.world-time{font-size:12px}#hud-combat{font-size:9px;letter-spacing:.07em}
+.zone-heading .demo-eyebrow{font-size:10px}.journey-heading .demo-eyebrow{font-size:9px}
+.quest-tracker h3{font-size:15px}.quest-tracker p{font-size:12px;line-height:1.8}
+.panel-navigation button{font-size:12px}.panel-navigation kbd{font-size:10px}
+.journey-step strong{font-size:12px}.journey-step small{font-size:10px}
+.sidebar-note{font-size:11px}.top-action{font-size:12px}
+.combat-shortcuts{gap:10px 14px;align-items:center;flex-wrap:wrap}
+.skill-key{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:3px 7px;font-size:10px;min-height:35px}
+.skill-key>kbd{grid-row:1/3}.skill-cooldown{font-size:9px;color:#b4cdb1;font-variant-numeric:tabular-nums}
+.skill-key[data-cooling=true] .skill-cooldown{color:#d1b681}
+.skill-key[data-cooling=true]>span{color:#a4ad99}
+.potion-key{font-size:10px}.cooldown-label{font-size:10px}.game-controls{font-size:9px}
+.boss-hud{position:absolute;top:16px;left:50%;transform:translateX(-50%);width:min(420px,calc(100% - 32px));padding:11px 15px;background:#151821ed;border:1px solid #b3a3cf70;z-index:2;pointer-events:none;box-shadow:0 6px 25px #0005}
+.boss-hud-heading,.boss-hud-detail{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:11px;color:#d0c4df}
+.boss-hud-heading strong{font-family:Cambria,'Segoe UI',serif;font-size:17px;font-weight:500;color:#eee2f3}
+.boss-hp-track{height:7px;background:#090f19;margin:9px 0 7px;overflow:hidden;border:1px solid #c6b5e032}
+.boss-hp-track>span{display:block;height:100%;background:linear-gradient(90deg,#9174af,#c5a3d5);transition:width .12s linear}
+.boss-hud-detail{font-size:10px;font-variant-numeric:tabular-nums}.boss-hud-detail strong{color:#f0b189;font-size:11px;font-weight:600}
+.boss-hud[data-warning=true]{border-color:#e4a272b0;background:#251d26f0}
+.boss-hud[data-phase="2"] .boss-hp-track>span{background:linear-gradient(90deg,#a772ad,#dfa5d9)}
+.panel-content{font-size:13px}.panel-intro p,.panel-note,.quest-card p,.quest-card p.quest-objective{font-size:13px}
+.inventory-slot h3{font-size:13px}.inventory-slot p{font-size:11px}.item-equipped{font-size:10px}
+.loadout-strip>span{font-size:12px}.loadout-strip small{font-size:10px}
+.class-card p,.recipe-details p,.trade-row p,.map-guide>p,.map-guide li,.travel-card p,.controls-list dt,.controls-list dd{font-size:12px}
+.quest-status,.quest-reward,.ingredient,.known-recipe,.unknown-recipe,.dialogue-note,.recipe-station{font-size:11px}
+.panel-footer{font-size:11px}.panel-header .demo-eyebrow{font-size:10px}
+.quiet-note,.pause-body .quiet-note{font-size:11px}.character-card .quiet-note{font-size:11px}
+.form-field{font-size:12px}.preview-detail{font-size:13px}.preview-level{font-size:9px}
+.settings-list{display:flex;flex-direction:column}.setting-row{display:flex;align-items:center;justify-content:space-between;gap:28px;padding:20px 0;border-bottom:1px solid var(--border)}
+.setting-row:first-child{padding-top:0}.setting-row strong{display:block;font-size:14px;font-weight:500;color:#e3dfc4}
+.setting-row small{display:block;font-size:12px;line-height:1.7;color:#a5b59c;margin-top:5px}
+.setting-row input[type=checkbox]{width:21px;height:21px;accent-color:#d5bd84;flex-shrink:0;cursor:pointer}
+.volume-control{display:flex;align-items:center;gap:12px;min-width:220px}.volume-control input{width:170px;accent-color:#d5bd84;cursor:pointer}.volume-control output{min-width:39px;color:#d5c899;font-size:12px;font-variant-numeric:tabular-nums}
+.utility-note{margin-top:23px}.utility-panel{max-width:750px}.setting-row .demo-button{min-width:155px}
+.save-transfer{display:grid;gap:25px}.save-transfer-section{padding:20px;border:1px solid #a9b08c33;background:#14241c55}
+.save-transfer-section h3{font:24px/1.5 Cambria,'Segoe UI',serif;margin:10px 0;color:#dcd5b6}
+.save-transfer-section p{font-size:13px;line-height:1.8;color:#acbca3;margin:0 0 18px}
+.save-transfer-section p.quiet-note{font-size:11px;margin:14px 0 0;color:#94a88c}
+.save-transfer-section .demo-eyebrow{font-size:10px}.save-file-label{display:grid;gap:9px;font-size:12px;color:#d3c8a3}
+.save-file-label input{max-width:100%;background:#0c1d16;border:1px solid #a1b48944;padding:10px;color:#b8c4ad;font-size:12px}
+.save-file-label input::file-selector-button{background:#293d2d;color:#dfd8b5;border:1px solid #9aaa7755;font:inherit;padding:7px 10px;margin-right:10px;cursor:pointer}
+.save-transfer-section .import-status{font-size:12px;margin:14px 0;overflow-wrap:anywhere}.import-status[data-tone=danger]{color:#e9b99a}.import-status[data-tone=success]{color:#bfd2a9}
+.import-preview{padding:16px;border:1px solid #b3ac7555;background:#090f1344;margin-bottom:18px}
+.save-preview-identity{display:flex;gap:18px;align-items:center;margin-bottom:15px}.save-preview-identity>div>strong{display:block;font:24px Cambria,'Segoe UI',serif;color:#ded3aa;overflow-wrap:anywhere}.save-preview-identity>div>span{display:block;font-size:12px;color:#acbda3;margin-top:8px}
+.import-preview dl{display:grid;gap:10px;margin:0}.import-preview dl>div{display:flex;gap:20px;justify-content:space-between;font-size:12px}.import-preview dt{color:#99ac90}.import-preview dd{margin:0;text-align:right;color:#d6d1b4}.import-preview>p{font-size:11px;margin:15px 0 0;color:#a5b498}
+.save-backup-list{display:grid;gap:12px}.save-backup-card{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:15px;border:1px solid #a6b18433;background:#10211999}.save-backup-card h4{font:20px Cambria,'Segoe UI',serif;color:#ded4b2;margin:0 0 7px;overflow-wrap:anywhere}.save-backup-card p{font-size:12px;margin:0 0 7px}.save-backup-card>div>span{font-size:10px;color:#92a386}.save-backup-actions{display:flex;flex-direction:column;gap:8px;flex-shrink:0}.save-backup-actions .demo-button{white-space:nowrap}
+@media(max-width:540px){.save-backup-card{flex-direction:column;align-items:stretch;gap:13px}.save-backup-actions{flex-direction:row;flex-wrap:wrap}.save-backup-card h4{font-size:19px}}
+@media(max-width:860px){.skill-key,.potion-key{font-size:10px}.hud-wallet{font-size:10px}.game-controls{font-size:9px}.boss-hud{top:12px}.journey-sidebar{grid-template-columns:minmax(0,1fr) minmax(180px,.65fr)}}
+@media(max-width:540px){.setting-row{gap:16px;align-items:flex-start}.volume-setting{flex-direction:column;gap:12px}.volume-control{width:100%;min-width:0}.volume-control input{width:100%}.setting-row .demo-button{min-width:120px;font-size:10px}.setting-row strong{font-size:13px}.setting-row small{font-size:11px}.save-transfer-section{padding:15px}.save-transfer-section h3{font-size:22px}.save-transfer-section p{font-size:12px}.boss-hud-heading strong{font-size:14px}.boss-hud-heading{font-size:9px}.boss-hud-detail strong{font-size:9px}.boss-hud-detail{font-size:9px}.boss-hud{padding:9px 11px;top:8px}.player-hud{grid-template-columns:140px minmax(0,1fr);gap:10px}.vital-row{grid-template-columns:22px minmax(30px,1fr) 64px;gap:4px}.vital-row b{font-size:9px}.hud-identity strong{font-size:11px}.hud-identity>div>span{font-size:9px}.xp-line{font-size:9px}.journey-sidebar{grid-template-columns:minmax(0,1fr) 150px}.panel-navigation button{font-size:10px}.quest-tracker h3{font-size:13px}.quest-tracker p{font-size:11px}.panel-footer{font-size:9px}.panel-header .demo-eyebrow{font-size:9px}.world-time{font-size:10px}#hud-combat{font-size:8px}.game-controls{font-size:8px}}
+
+/* Browser-sized world with HUD at the edges, leaving the centre for play. */
+body:has(#app[data-screen=game]){overflow:hidden}
+#app[data-screen=game]{position:fixed;inset:0;width:100%;height:100dvh;overflow:hidden;background:#101917;color:#f3f2e8;--muted:#c5d0c6;--border:#bdc7a84d}
+#app[data-screen=game] .game-shell{position:absolute;inset:0;width:100%;height:100%;margin:0;padding:0;max-width:none}
+#app[data-screen=game] .game-stage{position:absolute;inset:0;width:100%;height:100%;margin:0;aspect-ratio:auto;border:0;box-shadow:none}
+#app[data-screen=game] #game{inset:0;width:100%;height:100%;outline-offset:-4px}
+#app[data-screen=game] #game canvas{max-width:none}
+.game-menu-button{position:absolute;z-index:45;top:16px;right:16px;width:50px;height:50px;display:grid;place-items:center;background:#101d20f5;color:#f1d798;border:1px solid #d5bd8177;border-radius:9px;box-shadow:0 3px 16px #0006;pointer-events:auto}
+.game-menu-button:hover{background:#2c3e34}.game-menu-button[aria-expanded=true]{background:#384a3c;border-color:#f1d798}
+#app[data-screen=game] .game-status{display:contents}
+#app[data-screen=game] .player-hud{position:absolute;z-index:5;top:16px;left:16px;width:390px;max-width:calc(100% - 92px);display:grid;grid-template-columns:minmax(170px,1fr) auto;gap:9px 16px;padding:12px 14px;border:1px solid #c9b48166;border-radius:9px;background:#101d20ed;box-shadow:0 3px 18px #0006;pointer-events:none}
+#app[data-screen=game] .hud-identity{grid-column:1/-1;gap:12px;min-height:42px}
+#app[data-screen=game] .hud-identity strong{max-width:280px;font-size:16px;font-weight:600;color:#fff2cd}
+#app[data-screen=game] .hud-identity>div>span{font-size:14px;color:#d3ddd0;margin-top:3px}
+#app[data-screen=game] .hud-vitals{gap:7px;max-width:none}
+#app[data-screen=game] .vital-row{grid-template-columns:24px minmax(44px,1fr) 76px;gap:7px;font-size:12px;color:#f1f3e8}
+#app[data-screen=game] .vital-row b{font-size:12px;font-weight:600}
+#app[data-screen=game] .vital-row>span{color:#ffb29e}
+#app[data-screen=game] .vital-row.mana>span{color:#afd5ff}
+#app[data-screen=game] .vital-track{height:9px;border:1px solid #ffffff24;background:#060c11}
+#app[data-screen=game] .xp-line{font-size:12px;color:#cbd8c1;padding-left:0;gap:8px}
+#app[data-screen=game] .hud-wallet{grid-column:auto;display:grid;gap:5px;margin:0;font-size:12px;color:#d2ddce}
+#app[data-screen=game] .hud-wallet b{color:#f2e4c0;font-weight:600}
+#app[data-screen=game] .zone-heading{top:18px;left:50%;right:auto;transform:translateX(-50%);width:max-content;max-width:calc(100% - 840px);display:block;text-align:center;z-index:4;pointer-events:none}
+#app[data-screen=game] .zone-heading h1{font:600 24px/1.3 'Segoe UI',Tahoma,sans-serif;color:#fff0c7;margin:0}
+#app[data-screen=game] .zone-heading .demo-eyebrow{display:none}
+#app[data-screen=game] .world-time{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:4px 12px;font-size:13px;color:#e0e8d6;margin-top:6px}
+#app[data-screen=game] #hud-combat{font-size:12px;letter-spacing:0;color:#dce8ce}
+#app[data-screen=game] #hud-combat[data-combat=true]{color:#ffbd9f}
+#app[data-screen=game] .free-explore{font-size:12px;color:#dfedb0}
+#app[data-screen=game] .quest-guide{position:absolute;z-index:5;top:88px;right:16px;bottom:auto;left:auto;width:330px;max-width:calc(100% - 32px);min-height:0;margin:0;padding:12px 14px;gap:10px;border-radius:8px;background:#101d20ed;box-shadow:0 3px 18px #0005;pointer-events:none}
+#app[data-screen=game] .quest-guide strong{font-size:15px;line-height:1.5;color:#fff0c8}
+#app[data-screen=game] .quest-guide p{font-size:13px;line-height:1.6;gap:3px 10px}
+#app[data-screen=game] #quest-guide-label{color:#f6db9d}
+#app[data-screen=game] #quest-guide-action{color:#dbe5d4}
+#app[data-screen=game] .action-bar{position:absolute;z-index:5;left:50%;bottom:16px;transform:translateX(-50%);display:block;width:min(1040px,calc(100% - 32px));padding:0;pointer-events:none}
+#app[data-screen=game] .combat-shortcuts{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;align-items:stretch}
+#app[data-screen=game] .skill-key,#app[data-screen=game] .potion-key{display:grid;grid-template-columns:auto minmax(0,1fr);align-content:center;align-items:center;gap:4px 8px;min-height:66px;margin:0;padding:9px 10px;background:#101d20ed;border:1px solid #c9b48166;border-radius:8px;font-size:14px;line-height:1.4;color:#f5edcf;box-shadow:0 3px 15px #0004;text-align:left}
+#app[data-screen=game] .skill-key>kbd{grid-row:1/3}
+#app[data-screen=game] .skill-key[data-cooling=true]>span{color:#d2d8cb}
+#app[data-screen=game] .skill-cooldown{font-size:12px;color:#c3e2b6}
+#app[data-screen=game] .skill-key[data-cooling=true] .skill-cooldown{color:#f3cd8d}
+#app[data-screen=game] .potion-key{pointer-events:auto}
+#app[data-screen=game] .potion-key:hover{background:#304435;border-color:#e8cf8a}
+#app[data-screen=game] .potion-key b{color:#e6d3a0}
+#app[data-screen=game] kbd{font-size:12px;color:#fff1c7;background:#2a3b32;border-color:#c9b48166;padding:4px 6px}
+#app[data-screen=game] .cooldown-label{display:block;text-align:center;font-size:13px;color:#ffe0a1;margin-top:6px;text-shadow:0 2px 3px #000}
+#app[data-screen=game] .cooldown-label:empty{display:none}
+#app[data-screen=game] .interaction-prompt{z-index:6;bottom:106px;max-width:min(620px,calc(100% - 32px));font-size:16px;padding:10px 16px;color:#fff0c7;background:#101d20f5;border-radius:8px}
+#app[data-screen=game] .boss-hud{top:86px;z-index:5;width:min(420px,calc(100% - 32px));pointer-events:none;border-radius:8px}
+#app[data-screen=game] .boss-hud-heading strong{font:600 18px/1.3 'Segoe UI',Tahoma,sans-serif;color:#fff0ff}
+#app[data-screen=game] .boss-hud-heading,#app[data-screen=game] .boss-hud-detail,#app[data-screen=game] .boss-hud-detail strong{font-size:13px}
+#app[data-screen=game] .demo-toast{z-index:60;bottom:104px;font-size:16px;color:#f8edce;background:#172924f5}
+.panel-overlay:has(.menu-panel){justify-content:flex-end;align-items:flex-start;padding:78px 16px 16px;background:#07101066;backdrop-filter:none}
+/* Real panels cover the corner icon so their close button remains clickable
+   on narrow windows. The menu keeps its existing icon toggle above the shade. */
+#app[data-screen=game] .panel-overlay:not(:has(.menu-panel)){z-index:50}
+.menu-panel{width:min(380px,100%);max-height:calc(100dvh - 94px);border-radius:10px;background:#152822f7}
+.menu-panel .panel-header{padding:17px 20px}.menu-panel .panel-content{padding:10px 14px 16px}.menu-panel .panel-footer{padding:12px 16px;font-size:12px}
+.game-menu-navigation{display:grid;gap:2px}.game-menu-navigation button{display:flex;align-items:center;gap:12px;width:100%;min-height:43px;padding:8px 10px;background:none;border:0;border-bottom:1px solid #b5c09d29;color:#f1ecd5;text-align:left;font-size:16px;line-height:1.4;border-radius:5px}.game-menu-navigation button:hover{background:#4b614455}.game-menu-navigation button>span{width:24px;text-align:center;color:#f1d798;font-size:21px}.game-menu-navigation kbd{margin-left:auto}.menu-resume{width:100%;margin-top:14px}
+#app .game-panel{color:#f1f2e7;background:linear-gradient(135deg,#26382e,#152821)}
+#app .panel-content{font-size:16px;line-height:1.7}
+#app .panel-header h2{font:600 26px/1.3 'Segoe UI',Tahoma,sans-serif;color:#f6e8be}
+#app .panel-header .demo-eyebrow,#app .panel-footer,#app .quiet-note{font-size:12px;color:#c2d1bd}
+#app .panel-close{width:40px;height:40px;font-size:30px;flex-shrink:0}
+#app .panel-intro p,#app .panel-note,#app .quest-card p,#app .quest-card p.quest-objective,#app .help-save p,#app .controls-list dt,#app .controls-list dd,#app .first-journey li,#app .settings-list small,#app .save-transfer-section p{font-size:16px;color:#d7e3ce;line-height:1.7}
+#app .demo-button{font-size:16px;min-height:42px}
+#app .demo-button.small,#app .setting-row strong,#app .save-file-label,#app .save-file-label input,#app .save-backup-card p,#app .import-preview dd,#app .import-preview dt{font-size:14px}
+#app .class-card p,#app .recipe-details p,#app .trade-row p,#app .inventory-slot p,#app .map-guide>p,#app .map-guide li,#app .travel-card p{font-size:14px;color:#cbdcc0;line-height:1.6}
+#app .inventory-slot h3,#app .trade-row h4,#app .journey-step strong,#app .quest-tracker h3{font-size:16px;color:#f0e6bc}
+#app .quest-tracker p{font-size:14px;color:#d1dec8}
+#app .quest-status,#app .quest-reward,#app .ingredient,#app .known-recipe,#app .unknown-recipe,#app .dialogue-note,#app .recipe-station,#app .capacity-label,#app .item-quantity,#app .item-equipped,#app .loadout-strip>span,#app .loadout-strip small,#app .journey-step small,#app .tracker-status,#app .save-backup-card>div>span,#app .save-transfer-section .import-status,#app .save-transfer-section p.quiet-note{font-size:12px}
+@media(max-width:1100px){
+  #app[data-screen=game] .zone-heading{top:181px;left:16px;right:auto;max-width:calc(100% - 380px);transform:none;text-align:left}
+  #app[data-screen=game] .zone-heading h1{font-size:20px}
+  #app[data-screen=game] .world-time{justify-content:flex-start}
+  #app[data-screen=game] .boss-hud{top:182px}
+  #app[data-screen=game] .combat-shortcuts{gap:6px}
+  #app[data-screen=game] .skill-key,#app[data-screen=game] .potion-key{padding:8px 7px;gap:4px 6px;font-size:13px}
+}
+@media(max-width:740px){
+  #app[data-screen=game] .player-hud{top:12px;left:12px;width:calc(100% - 88px);max-width:none;padding:10px 12px;gap:8px 12px;grid-template-columns:minmax(160px,1fr) auto}
+  .game-menu-button{top:12px;right:12px;width:50px;height:50px}
+  #app[data-screen=game] .hud-identity strong{max-width:270px}
+  #app[data-screen=game] .zone-heading{top:182px;left:12px;right:12px;max-width:none;width:auto;text-align:left}
+  #app[data-screen=game] .zone-heading h1{font-size:20px}
+  #app[data-screen=game] .world-time{font-size:12px}
+  #app[data-screen=game] .game-stage:has(.boss-hud:not([hidden])) .zone-heading{visibility:hidden}
+  #app[data-screen=game] .boss-hud{top:182px;left:12px;transform:none;width:calc(100% - 24px)}
+  #app[data-screen=game] .quest-guide{top:auto;left:12px;right:12px;bottom:166px;width:auto;max-width:none;padding:9px 12px}
+  #app[data-screen=game] .quest-guide strong{font-size:14px}
+  #app[data-screen=game] .quest-guide p{font-size:12px}
+  #app[data-screen=game] .action-bar{bottom:12px;width:calc(100% - 24px)}
+  #app[data-screen=game] .combat-shortcuts{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+  #app[data-screen=game] .skill-key,#app[data-screen=game] .potion-key{min-height:63px;font-size:13px}
+  #app[data-screen=game] .interaction-prompt{bottom:288px;max-width:calc(100% - 24px);font-size:14px}
+  #app[data-screen=game] .demo-toast{bottom:286px;font-size:14px}
+  .panel-overlay:has(.menu-panel){padding:74px 12px 12px}.menu-panel{max-height:calc(100dvh - 86px)}
+  #app .game-panel .panel-header{padding:16px}.game-panel .panel-content{padding:16px}
+}
+@media(max-width:440px){
+  #app[data-screen=game] .player-hud{grid-template-columns:1fr;gap:7px}
+  #app[data-screen=game] .hud-wallet{display:flex;flex-wrap:wrap;font-size:12px;gap:10px}
+  #app[data-screen=game] .hud-identity strong{max-width:190px}
+  #app[data-screen=game] .zone-heading,#app[data-screen=game] .boss-hud{top:210px}
+}

@@ -1,0 +1,50 @@
+# Dependencies and generated builds
+node_modules/
+dist/
+build/
+coverage/
+*.tsbuildinfo
+
+# Secrets: commit only sanitized templates, never real credentials
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+!.env.*.example
+.envrc
+.secrets/
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Tool caches, logs and temporary files
+.cache/
+.vite/
+.parcel-cache/
+.turbo/
+.vercel/
+.eslintcache
+.stylelintcache
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+playwright-report/
+test-results/
+
+# Local playtest data; intentional fixtures belong elsewhere
+/local-data/
+/saves/
+/savegames/
+/.local-backups/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Keep source, game assets, GDD, package manifests and lockfiles tracked.

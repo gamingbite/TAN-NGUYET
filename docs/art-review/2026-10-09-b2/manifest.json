@@ -1,0 +1,117 @@
+{
+  "formatVersion": 1,
+  "createdAt": "2026-10-09T13:08:28.987Z",
+  "mode": "built-in image_gen",
+  "source": "AI-assisted, generated for TAN NGUYET; no third-party sprite source",
+  "status": "design-approved-production-integrated-and-verified",
+  "approvedGroups": {
+    "A": "visual approval by user",
+    "C": "visual approval by user",
+    "D": "visual approval by user",
+    "B": "v2 design approved by user: duyệt tất cả và tích hợp vào game"
+  },
+  "counts": {
+    "identityDesigns": 12,
+    "classStateKeyposes": 48,
+    "motionReferenceFrames": 48
+  },
+  "directions": "one front/three-quarter view per keypose, no full four-direction atlas",
+  "runtimeIntegration": false,
+  "artifacts": [
+    {
+      "id": "identity",
+      "file": "identity.png",
+      "generatedSource": "C:\\Users\\WIN\\.codex\\generated_images\\01a11f74-412e-77a3-bf31-e237047964e8\\exec-c3287e86-cfc2-4058-89cb-e99b637fdba9.png",
+      "revisionSource": null
+    },
+    {
+      "id": "swordsman-states",
+      "file": "swordsman-states.png",
+      "generatedSource": "C:\\Users\\WIN\\.codex\\generated_images\\01a11f74-412e-77a3-bf31-e237047964e8\\exec-fd942c7c-1cbd-42aa-af3f-17f4d0588b45.png",
+      "revisionSource": null
+    },
+    {
+      "id": "mage-states",
+      "file": "mage-states.png",
+      "generatedSource": "C:\\Users\\WIN\\.codex\\generated_images\\01a11f74-412e-77a3-bf31-e237047964e8\\exec-15b75a5d-514d-445c-9f2a-31ed27f9945f.png",
+      "revisionSource": "C:\\Users\\WIN\\.codex\\generated_images\\01a11f74-412e-77a3-bf31-e237047964e8\\exec-14187eb8-19ec-45c6-84bd-15ec393e0bba.png"
+    },
+    {
+      "id": "swordsman-motion",
+      "file": "swordsman-motion.png",
+      "generatedSource": "C:\\Users\\WIN\\.codex\\generated_images\\01a11f74-412e-77a3-bf31-e237047964e8\\exec-df094044-86f4-40aa-826b-dd5edc97dccf.png",
+      "revisionSource": null
+    },
+    {
+      "id": "mage-motion",
+      "file": "mage-motion.png",
+      "generatedSource": "C:\\Users\\WIN\\.codex\\generated_images\\01a11f74-412e-77a3-bf31-e237047964e8\\exec-35124010-74cb-4b00-92d3-be4909e72b31.png",
+      "revisionSource": "C:\\Users\\WIN\\.codex\\generated_images\\01a11f74-412e-77a3-bf31-e237047964e8\\exec-e66e392e-8d68-4a69-a8da-6dbf5c0d5dac.png"
+    }
+  ],
+  "productionRequired": [
+    "Redraw/normalize native pixel art after design approval; do not blindly reduce decorative detail",
+    "Four independent directions for every applicable state/race, measured frame metadata/common foot anchor",
+    "Keep equipped weapon handedness consistent and weapon layers matched to actual loadout",
+    "Preserve appearance choices, 32x42 rendering footY36 and12x12 collider offset10,29, map/save/combat timing/fallback",
+    "Build and runtime QA including hit/dodge/death/respawn/class/equipment/pause after real integration"
+  ],
+  "revisions": [
+    "Human Mage ATTACK crystal restored",
+    "Elf Mage motion ATTACK03/HURT02 staffs restored"
+  ],
+  "referenceOnly": [
+    "Motion examples are Human Swordsman and Elf Mage, not all races/genders/directions",
+    "Civilian animation production not included in these combat motion studies; no civilian attack added",
+    "Gender/hair/fur colors are samples, no race/gender locks or new cosmetic feature"
+  ],
+  "runtimeIntegrationNote": "runtimeIntegration:false applies only to the five labeled concept boards, preserved as references",
+  "productionIntegration": {
+    "status": "integrated",
+    "sourceManifest": "production-sources.json",
+    "bodyPrompts": "production-prompts.json",
+    "backPrompts": "production-back-prompts.json",
+    "sourcePNGs": 8,
+    "runtimeBaseOutputs": 384,
+    "independentDrawingsClaim": false,
+    "nativeFrame": {
+      "width": 32,
+      "height": 42,
+      "groundY": 36
+    },
+    "feetCollider": {
+      "width": 12,
+      "height": 12,
+      "offsetX": 10,
+      "offsetY": 29
+    },
+    "states": [
+      "idle",
+      "walk",
+      "attack",
+      "hurt",
+      "death",
+      "dodge"
+    ],
+    "directions": [
+      "down",
+      "left",
+      "right",
+      "up"
+    ],
+    "frameProvenance": "src/game/world/B2PlayerSources.ts",
+    "cropBounds": "src/game/world/B2SourceBounds.ts",
+    "verification": {
+      "command": "npm run verify",
+      "exitCode": 0,
+      "passed": 97,
+      "failed": 0,
+      "playwrightDuration": "11.4m",
+      "browser": "Microsoft Edge",
+      "evidence": ".cache/qa/2026-10-10-b2-regression/verify-complete.log",
+      "exitObservedFromExecSession": 94642
+    },
+    "uiEvidence": ".cache/qa/2026-10-10-b2-regression/ui-final/result.json",
+    "limits": "Annotated reuse/mirroring remains; see production-sources.json and ART_PROGRESS.md"
+  }
+}

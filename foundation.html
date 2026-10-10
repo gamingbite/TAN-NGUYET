@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101719" />
+    <meta name="description" content="Nền tảng phát triển local cho TÀN NGUYỆT – The Cursed Kingdom." />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <title>TÀN NGUYỆT – The Cursed Kingdom</title>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#"><span class="moon-mark" aria-hidden="true">☾</span> TÀN NGUYỆT</a>
+        <span class="local-tag"><span></span> BẢN THỬ LOCAL</span>
+      </header>
+      <main>
+        <section class="intro" aria-labelledby="game-title">
+          <p class="eyebrow">THE CURSED KINGDOM</p>
+          <h1 id="game-title">Một vương quốc.<br />Vạn ngả đường.</h1>
+          <p class="description">Bắt đầu từ một dân thường. Tự viết hành trình của bạn dưới ánh Tàn Nguyệt.</p>
+        </section>
+        <section class="workspace" aria-label="Cảnh kiểm tra nền tảng">
+          <div class="stage-column">
+            <div class="stage-heading"><span><i class="status-dot"></i> CẢNH THỬ KỸ THUẬT</span><span>00 / NỀN TẢNG</span></div>
+            <div class="stage-frame" id="stage-frame">
+              <div id="game" tabindex="0" aria-label="Cảnh thử game, dùng WASD hoặc phím mũi tên để di chuyển"></div>
+              <div class="stage-cover" id="stage-cover">
+                <div class="cover-moon" aria-hidden="true">☾</div>
+                <p class="eyebrow">NHỮNG BƯỚC CHÂN ĐẦU TIÊN</p>
+                <h2>Khởi đầu hành trình</h2>
+                <p>Mở cảnh thử để kiểm tra di chuyển,<br />va chạm và hiển thị pixel.</p>
+                <button id="start-button" class="primary-button" type="button">Mở cảnh thử <span aria-hidden="true">→</span></button>
+              </div>
+              <div class="pause-overlay" id="pause-overlay" hidden><span>Đã tạm dừng</span><button id="resume-button" type="button">Tiếp tục</button></div>
+            </div>
+            <div class="stage-toolbar">
+              <p id="scene-status" role="status" aria-live="polite">Sẵn sàng mở cảnh thử</p>
+              <div class="toolbar-actions"><button id="pause-button" type="button" disabled>Tạm dừng</button><button id="reset-button" type="button" disabled>Về điểm bắt đầu</button></div>
+            </div>
+            <p id="runtime-error" class="runtime-error" role="alert" hidden></p>
+            <div class="control-guide"><span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> / <span class="arrow-keys">↑ ← ↓ →</span> Di chuyển</span><span><kbd>Esc</kbd> Tạm dừng</span></div>
+          </div>
+          <aside class="notes-panel">
+            <p class="eyebrow">BƯỚC ĐẦU CỦA V0.1</p>
+            <h2>Chuẩn bị<br />cho một thế giới.</h2>
+            <p>Đây là nền tảng kiểm tra kỹ thuật. Nhân vật, bản đồ và hình ảnh trong cảnh đều là mẫu thử.</p>
+            <div class="current-step"><span class="step-number">00</span><div><strong>Nền tảng chạy game</strong><span>Đang kiểm tra tại máy của bạn</span></div></div>
+            <div class="next-step"><span class="step-number">01</span><div><strong>Tạo nhân vật</strong><span>Bước phát triển tiếp theo</span></div></div>
+            <div class="scope-note"><span aria-hidden="true">✦</span><p>Demo sẽ đi từ dân thường tới Boss đầu tiên. Toàn bộ gameplay sẽ được xây từng bước theo GDD.</p></div>
+            <p class="footnote">Chơi đơn · PC trình duyệt · Chưa có lưu tiến độ trong cảnh thử</p>
+          </aside>
+        </section>
+      </main>
+      <footer><span>TÀN NGUYỆT <span class="footer-divider">/</span> THE CURSED KINGDOM</span><span>Nền tảng phát triển · 0.0.1</span></footer>
+    </div>
+    <script type="module" src="/src/foundation.ts"></script>
+  </body>
+</html>

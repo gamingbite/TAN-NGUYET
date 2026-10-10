@@ -1,0 +1,50 @@
+# Xuất bản demo TÀN NGUYỆT
+
+**Ngày:** 10/10/2026. **Trạng thái:** đã xác thực Vercel và tạo project; đang kiểm thử trước xuất bản, chưa xác nhận website hoạt động.
+
+Người dùng cho phép Git, commit/push vào [gamingbite/TAN-NGUYET](https://github.com/gamingbite/TAN-NGUYET) và xuất bản demo tại **[https://tan-nguyet-game.vercel.app](https://tan-nguyet-game.vercel.app)**. Giữ tên repo và lịch sử remote; không triển khai gameplay v0.2 trong đợt này.
+
+## Địa chỉ và dữ liệu chơi
+
+- Game yêu cầu: [tan-nguyet-game.vercel.app](https://tan-nguyet-game.vercel.app).
+- Cảnh kỹ thuật cần giữ: [foundation.html](https://tan-nguyet-game.vercel.app/foundation.html).
+- Kiểm source: [GitHub Actions](https://github.com/gamingbite/TAN-NGUYET/actions/workflows/verify-demo.yml).
+
+Bạn bè chơi bằng trình duyệt PC, bàn phím/chuột. Đây là game chơi đơn; mỗi người có nhân vật/save riêng trong trình duyệt. Save local không tự xuất hiện trên website vì khác origin. Chuyển nhân vật bằng **Bản lưu & sao lưu → Xuất JSON**, sau đó chọn file trên bản web, xem trước và xác nhận khôi phục. Triển khai không đọc/xóa save thật của người dùng.
+
+Project Vercel `tan-nguyet-game` thuộc scope tài khoản đã xác thực `hungmap478-4866`. Chỉ báo link sẵn sàng sau khi gắn đúng domain, deployment Ready và truy cập từ trình duyệt không đăng nhập. Nếu domain thuộc tài khoản khác, báo rõ và hỏi tên thay thế; không tự đổi tên.
+
+## Cấu hình và quy trình
+
+[vercel.json](../vercel.json) giữ Vite, `npm ci --ignore-scripts`, `npm run build`, output `dist`. Không thêm SPA rewrite; `/foundation.html` là entry thật, asset thiếu phải trả lỗi. `.vercelignore` loại backup/cache/save/env/test/docs khỏi upload source; `.vercel/` nằm ngoài Git và snapshot local.
+
+[verify-demo.yml](../.github/workflows/verify-demo.yml) chỉ kiểm source khi push code vào `main` hoặc chạy thủ công: Node22.20.0 → npm ci theo lock → TypeScript/build → Chromium → hai test deployment. Actions pin SHA; không chứa token Vercel hoặc job xuất bản Pages. Pages đã được chuẩn bị trước khi người dùng chọn Vercel, nhưng chưa deploy; workflow Pages đã thay bằng kiểm build.
+
+Lần xuất bản này upload đúng artifact đã kiểm qua CLI Vercel63.1.2:
+
+1. Sao lưu local, chạy `npm run verify`; giữ log và kết quả thật.
+2. `npm exec --yes --package=vercel@63.1.2 -- vercel login`. Người dùng xác thực OAuth Device Flow; không chia sẻ mật khẩu/token trong chat.
+3. Kiểm tài khoản/project; link bằng `vercel link --yes --project tan-nguyet-game --scope hungmap478-4866`. Không ghi đè project khác.
+4. Tạo `.vercel/output/config.json` với `{"version":3}`, chép **chỉ nội dung dist** vào `.vercel/output/static/`. So hash mọi file, bảo đảm không có function/env/output cũ. Metadata này không commit.
+5. `vercel deploy --prebuilt --prod` qua CLI đã pin. Không dùng `--public` (cờ này công khai source). Kiểm domain production đúng tên đã chốt.
+6. Kiểm public bằng context mới không có cookie đăng nhập/bypass: HTTP, art/title/portrait, tạo nhân vật, di chuyển, menu, lưu/reload/Continue, cửa sổ hẹp và Foundation. Ghi URL/commit/deployment/CI và kết quả vào queue/nhật ký.
+
+Push GitHub chưa tự cập nhật Vercel: Git integration chưa kết nối vì tài khoản Vercel thiếu GitHub Login Connection. CLI vẫn xuất bản được; quy trình hiện tại tách kiểm CI và xuất bản artifact, không cần người dùng cung cấp thêm token.
+
+## Thay đổi phục vụ xuất bản
+
+- Giữ Vite `base:'./'`; `ArtManifest.ts`, `PlayerArt.ts`, `B2PlayerSources.ts` dùng URL PNG tương đối `assets/...`. Không thay PNG/renderer/collider/gameplay.
+- Test art giải URL manifest; `tests/deployment.spec.ts` kiểm build thật dưới prefix `/TAN-NGUYET/`, không alias root-assets/fallback che lỗi. Vercel root vẫn hưởng sửa này.
+- Chỉ đưa source/asset/config/tài liệu cần thiết vào Git; loại dependencies/dist/cache/backup/browser save/env/`.vercel`.
+- Remote ban đầu có một commit README; giữ làm cha lần upload source, không force-push/xóa lịch sử.
+
+## Bằng chứng hiện có
+
+- Backup trước sửa URL: `.local-backups/2026-10-10T07-31-53-482Z-before-github-pages-release-lhW7nL`,120file,exit0.
+- Backup trước Vercel/harness: `.local-backups/2026-10-10T13-25-21-397Z-before-vercel-release-fix-Nn4tU4`,123file,exit0.
+- Prefix/art focused5/5PASS. Verify mới buildPASS,99passed/2failed,exit1,10,2phút; hai lỗi harness hành trình được giữ log/trace. Các thử chỉnh phòng vệ trong harness không ổn định đã bỏ. Đã khôi phục đúng thao tác journey gốc từ backup, chỉ tắt ảnhcanvas trace từngaction; đang chạy focused haijourney, chưa có kết quả cuối. Không dùng99/99 baseline town thay kết quả mới.
+- Vercel đã tạo/link project, chưa deploy và domain tan-nguyet-game.vercel.app đã verified. CLI tạo `.env.local` chứa thông tin local; không đọc/in/upload, Gitignore/backup loại file này. Đang đưa source đã kiểm tra lên GitHub; website Vercel chưa deploy.
+
+Nếu deployment lỗi, giữ artifact/log và sửa nguyên nhân cụ thể. Khôi phục code bằng commit sửa/revert đã kiểm; không force-push hoặc xóa save/backup.
+
+Nguồn chính thức: [Vercel Vite](https://vercel.com/docs/frameworks/frontend/vite), [CLI login](https://vercel.com/docs/cli/login), [prebuilt deployment](https://vercel.com/docs/cli/deploy), [Build Output API](https://vercel.com/docs/build-output-api/primitives), [Vite deployment](https://vite.dev/guide/static-deploy.html).

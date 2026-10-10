@@ -1,0 +1,142 @@
+{
+  "mode": "built-in image_gen",
+  "approvedDesign": "B2 approved by user request: duyệt tất cả và tích hợp vào game",
+  "sources": [
+    {
+      "race": "human",
+      "file": "public/assets/atlases/player_human_b2.png",
+      "generatedSource": "C:\\Users\\WIN\\.codex\\generated_images\\01a11f74-412e-77a3-bf31-e237047964e8\\exec-32dcade5-3262-432d-81c7-f8a0de97ec68.png",
+      "kind": "body",
+      "sha256": "76f85ea4929898c7f02112cea01d65d3b62cb6e7b1d405f5a090dde411869e5f",
+      "bytes": 2720563,
+      "width": 1024,
+      "height": 1536,
+      "bitDepth": 8,
+      "colorType": 6,
+      "generatedSourcePreserved": true
+    },
+    {
+      "race": "human",
+      "file": "public/assets/atlases/player_human_b2_back.png",
+      "generatedSource": "C:\\Users\\WIN\\.codex\\generated_images\\01a11f74-412e-77a3-bf31-e237047964e8\\exec-b9d1a27c-d091-43b2-a202-27606def1e63.png",
+      "kind": "supplementary-back",
+      "sha256": "a31141649a53323e06e528a24cd34128b518a0da23b34f2cabfde150594837e2",
+      "bytes": 1116073,
+      "width": 1448,
+      "height": 1086,
+      "bitDepth": 8,
+      "colorType": 6,
+      "generatedSourcePreserved": true
+    },
+    {
+      "race": "elf",
+      "file": "public/assets/atlases/player_elf_b2.png",
+      "generatedSource": "C:\\Users\\WIN\\.codex\\generated_images\\01a11f74-412e-77a3-bf31-e237047964e8\\exec-af0cb8e5-41f0-4f28-9f19-2901022ddfff.png",
+      "kind": "body",
+      "sha256": "015ed38671017a48de6cd897e0e6cc415d7d4f0139a431f5779366dafa999c9c",
+      "bytes": 2537313,
+      "width": 1024,
+      "height": 1536,
+      "bitDepth": 8,
+      "colorType": 6,
+      "generatedSourcePreserved": true
+    },
+    {
+      "race": "elf",
+      "file": "public/assets/atlases/player_elf_b2_back.png",
+      "generatedSource": "C:\\Users\\WIN\\.codex\\generated_images\\01a11f74-412e-77a3-bf31-e237047964e8\\exec-ddd211de-b9f8-4754-8628-b6c3d09caab5.png",
+      "kind": "supplementary-back",
+      "sha256": "19fc499b0f892602128232c4973b36551091aefc7509a3b950b88032b46c1920",
+      "bytes": 984546,
+      "width": 1448,
+      "height": 1086,
+      "bitDepth": 8,
+      "colorType": 6,
+      "generatedSourcePreserved": true
+    },
+    {
+      "race": "dwarf",
+      "file": "public/assets/atlases/player_dwarf_b2.png",
+      "generatedSource": "C:\\Users\\WIN\\.codex\\generated_images\\01a11f74-412e-77a3-bf31-e237047964e8\\exec-b7d7d51c-405e-4c54-bd2d-2633433bab29.png",
+      "kind": "body",
+      "sha256": "dfcd4207fcb2ef370e9e8c5d9213e39a87a758b5b196d828f7dc9f23cf0d11fc",
+      "bytes": 2768844,
+      "width": 1024,
+      "height": 1536,
+      "bitDepth": 8,
+      "colorType": 6,
+      "generatedSourcePreserved": true
+    },
+    {
+      "race": "dwarf",
+      "file": "public/assets/atlases/player_dwarf_b2_back.png",
+      "generatedSource": "C:\\Users\\WIN\\.codex\\generated_images\\01a11f74-412e-77a3-bf31-e237047964e8\\exec-395911bc-b310-4fdc-af47-a221fb9037e9.png",
+      "kind": "supplementary-back",
+      "sha256": "5433b3e692107ad10d5ffe213cda10977d989dea369d845ae84391387b243b5f",
+      "bytes": 1076133,
+      "width": 1447,
+      "height": 1087,
+      "bitDepth": 8,
+      "colorType": 6,
+      "generatedSourcePreserved": true
+    },
+    {
+      "race": "beast",
+      "file": "public/assets/atlases/player_beast_b2.png",
+      "generatedSource": "C:\\Users\\WIN\\.codex\\generated_images\\01a11f74-412e-77a3-bf31-e237047964e8\\exec-a6da2608-6352-4dca-b304-b1048bef9079.png",
+      "kind": "body",
+      "sha256": "1b8c3b2584fbaf2ec918a56ed2fae2021cc05bb13aeecba84fe91a9ee3201830",
+      "bytes": 2501290,
+      "width": 1024,
+      "height": 1536,
+      "bitDepth": 8,
+      "colorType": 6,
+      "generatedSourcePreserved": true
+    },
+    {
+      "race": "beast",
+      "file": "public/assets/atlases/player_beast_b2_back.png",
+      "generatedSource": "C:\\Users\\WIN\\.codex\\generated_images\\01a11f74-412e-77a3-bf31-e237047964e8\\exec-6d36f33f-93f6-41be-b500-13e6f9874938.png",
+      "kind": "supplementary-back",
+      "sha256": "37c8ef76b3276d63484794e7afae9ab57a9342d6de09e16379b78ff45f092a28",
+      "bytes": 1054287,
+      "width": 1448,
+      "height": 1086,
+      "bitDepth": 8,
+      "colorType": 6,
+      "generatedSourcePreserved": true
+    }
+  ],
+  "nativeFrame": {
+    "width": 32,
+    "height": 42,
+    "groundY": 36
+  },
+  "runtimeBaseOutputs": 384,
+  "outputFormula": "4 races x 4 directions x 6 animation states x 4 frames",
+  "independentSourceCropCounts": {
+    "human": 67,
+    "elf": 91,
+    "dwarf": 65,
+    "beast": 84
+  },
+  "frameProvenance": "src/game/world/B2PlayerSources.ts",
+  "measuredBounds": "src/game/world/B2SourceBounds.ts",
+  "limits": [
+    "384 outputs are not 384 independent drawings; annotated reuse and mirroring are intentional",
+    "Back attack body reuses back walk with posed weapon layers",
+    "Some human hurt/dodge, dwarf guard/dodge and human side death use annotated alternate poses",
+    "Fixed per-race/source scale preserves full prone silhouettes within native frame; standing bodies about26-27px"
+  ],
+  "status": "integrated-and-verified",
+  "verification": {
+    "command": "npm run verify",
+    "exitCode": 0,
+    "passed": 97,
+    "failed": 0,
+    "playwrightDuration": "11.4m",
+    "browser": "Microsoft Edge",
+    "evidence": ".cache/qa/2026-10-10-b2-regression/verify-complete.log",
+    "exitObservedFromExecSession": 94642
+  }
+}

@@ -1,0 +1,39 @@
+name: Verify demo build
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - '**/*.md'
+      - 'docs/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: verify-demo
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - name: Set up Node
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version: '22.20.0'
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci --ignore-scripts
+      - name: Build both game entries
+        run: npm run build
+      - name: Install browser for deployment checks
+        run: npx playwright install --with-deps chromium
+      - name: Test public subpath and preserved Foundation entry
+        env:
+          PLAYWRIGHT_CHANNEL: chromium
+        run: npx playwright test tests/deployment.spec.ts --reporter=line
