@@ -77,6 +77,9 @@ test.afterAll(async () => {
 });
 
 test('the published repository prefix loads real art and preserves a played character through save and Continue', async ({ page, request }) => {
+  // This case renders four race portraits and boots the full game twice.
+  // Shared Linux runners can exceed the default whole-test 30s budget.
+  test.setTimeout(90_000);
   const errors: string[] = [], failed: string[] = [], httpErrors: string[] = [];
   const pngResponses = new Map<string, number>();
   const assetRequests: string[] = [];
@@ -109,6 +112,7 @@ test('the published repository prefix loads real art and preserves a played char
       return image.complete && image.naturalWidth === 32 && image.naturalHeight === 42;
     })).toBe(true);
   }
+  if (process.env.CI) console.log('Deployment check: title and all race portraits loaded');
   await page.locator('#character-name').fill('Khách chơi trên web');
   await page.locator('#create-button').click();
   await expect(page.locator('#game')).toHaveAttribute('data-ready', 'true');
@@ -123,6 +127,7 @@ test('the published repository prefix loads real art and preserves a played char
     ...['human', 'elf', 'dwarf', 'beast'].flatMap(race => [`player_${race}_b2.png`, `player_${race}_b2_back.png`]),
   ];
   for (const sheet of expectedSheets) expect(pngResponses.get(`${prefix}assets/atlases/${sheet}`), sheet).toBe(200);
+  if (process.env.CI) console.log('Deployment check: game and all world/player sheets ready');
 
   const startX = Number(await page.locator('#game').getAttribute('data-px'));
   await page.locator('#game').focus();
@@ -138,6 +143,7 @@ test('the published repository prefix loads real art and preserves a played char
   expect(saved.character.name).toBe('Khách chơi trên web');
   expect(saved.world.zone).toBe('town');
   expect(saved.world.x).toBeGreaterThan(startX + 20);
+  if (process.env.CI) console.log('Deployment check: movement and manual save passed');
 
   await page.reload();
   await expect(page.locator('#continue-button')).toBeVisible();
@@ -163,6 +169,7 @@ test('the published repository prefix loads real art and preserves a played char
   expect(assetRequests.length).toBeGreaterThan(14);
   expect(assetRequests.every(pathname => pathname.startsWith(`${prefix}assets/`)), JSON.stringify(assetRequests)).toBe(true);
   expect(errors).toEqual([]); expect(failed).toEqual([]); expect(httpErrors).toEqual([]);
+  if (process.env.CI) console.log('Deployment check: reload, Continue and network passed');
 });
 
 test('the preserved foundation entry starts and moves beneath the published repository prefix', async ({ page }) => {

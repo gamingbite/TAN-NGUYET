@@ -11,7 +11,7 @@
 
 ## Tiến độ phiên hiện tại
 
-- [ ] **PUB-01 DOING — GitHub/Vercel,10/10:** URL `https://tan-nguyet-game.vercel.app`, repo `gamingbite/TAN-NGUYET`. Vercel project/domain verified, artifact28file khớphash. BuildPASS; verify101 mới **99PASS/2harnessFAIL,exit1,10,2phút**. Các thử phòng vệ trong test tạo thêm combat/tiêuMP nên đã bỏ; khôi phục đúng thao tác journey từ backup trước sửa, chỉ tắt ảnhcanvas trace từngaction (giữDOM/source/failureimage). **Focused hai journey đang chạy session16433**, log `.cache/qa/2026-10-10-publish/journey-original-actions.log`, exit `journey-original-actions-exit.json`. CI/deploymenttestsđãPASS; đang commit/push source đãkiểm tra, chưaVerceldeploy. Không sửa source/test/build khi focused chạy. [Quy trình](PUBLISHING.md).
+- [ ] **PUB-01 DOING — GitHub/Vercel,10/10:** source đãpush `450af3575c64705d458b4761ccc200be59dc6ff2`. LocalbuildPASS;99regressionPASS và focusedhai journey gốc **2/2PASS,exit0,5,2phút** (Sword2,5/Mage2,7). Trace chỉ giảm ảnhcanvas; không đổi gameplay/thao tác journey. CIrun38056964136 buildPASS nhưng compositeprefix chạm30s; sửa riêng timeout90s/checkpointlog/failureartifact, localdeployment **2/2PASS,9,9s**. ĐangpushCIfix/chờCI mới và deploy Vercel `tan-nguyet-game.vercel.app`; domainverified/artifact28filekhớphash. Chưa báo webReady. [Quy trình](PUBLISHING.md).
 - **Thứ tự hiện tại:** hoàn thànhPUB-01 theo yêu cầu trực tiếp → trở về kế hoạchV02-00/P0-03 khi được giao phát triển tiếp. Không coi việc xuất bản là triển khai v0.2 hoặc Multiplayer.
 
 ### Mốc lập kế hoạch đã hoàn thành trước yêu cầu xuất bản

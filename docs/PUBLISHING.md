@@ -42,8 +42,8 @@ Push GitHub chưa tự cập nhật Vercel: Git integration chưa kết nối v�
 
 - Backup trước sửa URL: `.local-backups/2026-10-10T07-31-53-482Z-before-github-pages-release-lhW7nL`,120file,exit0.
 - Backup trước Vercel/harness: `.local-backups/2026-10-10T13-25-21-397Z-before-vercel-release-fix-Nn4tU4`,123file,exit0.
-- Prefix/art focused5/5PASS. Verify mới buildPASS,99passed/2failed,exit1,10,2phút; hai lỗi harness hành trình được giữ log/trace. Các thử chỉnh phòng vệ trong harness không ổn định đã bỏ. Đã khôi phục đúng thao tác journey gốc từ backup, chỉ tắt ảnhcanvas trace từngaction; đang chạy focused haijourney, chưa có kết quả cuối. Không dùng99/99 baseline town thay kết quả mới.
-- Vercel đã tạo/link project, chưa deploy và domain tan-nguyet-game.vercel.app đã verified. CLI tạo `.env.local` chứa thông tin local; không đọc/in/upload, Gitignore/backup loại file này. Đang đưa source đã kiểm tra lên GitHub; website Vercel chưa deploy.
+- BuildPASS/99regressionPASS; focusedhai journey gốc2/2PASS,exit0,5,2phút (Sword2,5/Mage2,7), gồm Boss/handin/save/Continue/freeplay. Đây là hai lệnh riêng; fullverify trước đó99PASS/2harnessFAIL được giữlog. Chỉ giảm ảnhcanvas trace, bỏ các thử thay thao tác. CI đầu buildPASS nhưng testprefix tổng hợp chạm30s; chỉnh timeout riêng90s/giữassertion và thêm log/failureartifact. Localdeployment sau chỉnh2/2PASS,9,9s.
+- Vercel đã tạo/link project, chưa deploy và domain tan-nguyet-game.vercel.app đã verified. CLI tạo `.env.local` chứa thông tin local; không đọc/in/upload, Gitignore/backup loại file này. Source đã lên GitHub tại450af3575c64705d458b4761ccc200be59dc6ff2; đangpushCIfix và chuẩn bị Vercel production, chưa xác nhận web hoạt động.
 
 Nếu deployment lỗi, giữ artifact/log và sửa nguyên nhân cụ thể. Khôi phục code bằng commit sửa/revert đã kiểm; không force-push hoặc xóa save/backup.
 
